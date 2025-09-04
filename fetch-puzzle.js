@@ -23,7 +23,20 @@ async function fetchPuzzle() {
     });
 
     const puzzleData = response.data;
-    const publicationDate = puzzleData.body[0].publicationDate;
+    console.log('API Response:', JSON.stringify(puzzleData, null, 2)); // Log response for debugging
+
+    // Validate response structure
+    if (!puzzleData || !puzzleData.body || !Array.isArray(puzzleData.body) || !puzzleData.body[0]) {
+      throw new Error('Invalid API response: missing body or body[0]');
+    }
+
+    let publicationDate = puzzleData.body[0].publicationDate;
+    if (!publicationDate || !/^\d{4}-\d{2}-\d{2}$/.test(publicationDate)) {
+      console.warn(`Invalid or missing publicationDate: ${publicationDate}. Using current date as fallback.`);
+      const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
+      publicationDate = today;
+    }
+
     const fileName = `${publicationDate}.json`;
     const filePath = path.join('puzzles', fileName);
 
@@ -60,6 +73,10 @@ async function fetchPuzzle() {
     console.log(`Saved puzzle for ${publicationDate}`);
   } catch (error) {
     console.error('Error fetching puzzle:', error.message);
+    if (error.response) {
+      console.error('Response status:', error.response.status);
+      console.error('Response data:', JSON.stringify(error.response.data, null, 2));
+    }
     process.exit(1);
   }
 }
