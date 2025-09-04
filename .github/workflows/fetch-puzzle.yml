@@ -30,7 +30,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add puzzles/*.json puzzles/puzzle-list.json
+          git add .
           git commit -m "Add puzzle for $(date -u +%Y-%m-%d)" || echo "No changes to commit"
           git pull --rebase origin main
           git push origin main
