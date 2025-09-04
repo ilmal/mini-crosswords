@@ -4,6 +4,9 @@ on:
     - cron: '0 0 * * *' # Runs daily at 00:00 UTC
   workflow_dispatch: # Allows manual triggering
 
+permissions:
+  contents: write # Grant write access to repository contents
+
 jobs:
   fetch-puzzle:
     runs-on: ubuntu-latest
@@ -21,8 +24,6 @@ jobs:
 
       - name: Fetch and save puzzle
         run: node fetch-puzzle.js
-        env:
-          NYT_COOKIE: ${{ secrets.NYT_COOKIE }}
 
       - name: Commit and push changes
         run: |
