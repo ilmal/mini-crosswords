@@ -96,11 +96,168 @@
 
   <script>
     let currentPuzzle = null;
+    let currentPuzzleFile = null; // << stores filename for cookies
     let selectedCell = null;
     let selectedClue = null;
     let isAcross = true;
     let isChecked = false;
     let isRevealed = false;
+
+    // Timing + persistence
+    let isCompleted = false;
+    let elapsedMs = 0;        // accumulated time
+    let lastTick = null;      // last time we updated elapsed
+    let timerInterval = null; // periodic saver
+
+    // ---- Cookie helpers ----
+    function setCookie(name, value, days = 365) {
+      const secure = location.protocol === 'https:' ? '; Secure' : '';
+      document.cookie = `${name}=${encodeURIComponent(value)}; Max-Age=${days*24*60*60}; Path=/; SameSite=Lax${secure}`;
+    }
+    function getCookie(name) {
+      const match = document.cookie.split('; ').find(row => row.startsWith(name + '='));
+      return match ? match.split('=')[1] : null;
+    }
+    function setCookieJSON(name, obj, days = 365) { setCookie(name, JSON.stringify(obj), days); }
+    function getCookieJSON(name) { const v = getCookie(name); if (!v) return null; try { return JSON.parse(decodeURIComponent(v)); } catch { return null; } }
+    function deleteCookie(name) { document.cookie = `${name}=; Max-Age=0; Path=/; SameSite=Lax`; }
+
+    // Namespacing
+    const COOKIE_PREFIX = 'MC_';
+    const COMPLETED_COOKIE = COOKIE_PREFIX + 'COMPLETED'; // map { [puzzleId]: { timeMs, completedAt, byReveal, title } }
+    const LAST_PUZZLE_COOKIE = COOKIE_PREFIX + 'LAST';     // string (filename)
+    function stateCookieName() { return COOKIE_PREFIX + 'STATE_' + getPuzzleId(); }
+
+    function getPuzzleId() {
+      // Use filename if available; fallback to publication date; else UID
+      const pub = currentPuzzle?.body?.[0]?.publicationDate || '';
+      if (currentPuzzleFile) return currentPuzzleFile.replace(/^.*\/(.*)$/,'$1');
+      return pub || 'puzzle_' + (currentPuzzle?.body?.[0]?.clues?.length || Math.random().toString(36).slice(2));
+    }
+
+    function startTimer() {
+      lastTick = Date.now();
+      if (timerInterval) clearInterval(timerInterval);
+      timerInterval = setInterval(() => {
+        if (!isCompleted && !isRevealed) {
+          // accumulate elapsed and save silently every 5s
+          const now = Date.now();
+          elapsedMs += (now - lastTick);
+          lastTick = now;
+          saveProgress(true);
+        }
+      }, 5000);
+    }
+    function stopTimer() { if (timerInterval) { clearInterval(timerInterval); timerInterval = null; } }
+
+    function formatMs(ms) {
+      const m = Math.floor(ms / 60000);
+      const s = Math.floor((ms % 60000) / 1000);
+      return `${m}:${String(s).padStart(2,'0')}`;
+    }
+
+    function collectLetters() {
+      const map = {};
+      const cells = currentPuzzle.body[0].cells;
+      for (let row = 0; row < 5; row++) {
+        for (let col = 0; col < 5; col++) {
+          const idx = row * 5 + col;
+          if (cells[idx].answer) {
+            const input = getInputAt(row, col);
+            map[idx] = (input?.value || '').toUpperCase();
+          }
+        }
+      }
+      return map;
+    }
+    function applyLetters(map) {
+      if (!map) return;
+      Object.keys(map).forEach(k => {
+        const idx = parseInt(k);
+        const row = Math.floor(idx / 5);
+        const col = idx % 5;
+        const input = getInputAt(row, col);
+        if (input) input.value = map[k] || '';
+      });
+    }
+
+    function saveProgress(silent = false) {
+      // If a timer session is active, accumulate since last tick
+      if (!isCompleted && lastTick !== null && !isRevealed) {
+        const now = Date.now();
+        elapsedMs += (now - lastTick);
+        lastTick = now;
+      }
+      const payload = {
+        letters: collectLetters(),
+        isChecked, isRevealed,
+        elapsedMs, completed: isCompleted
+      };
+      setCookieJSON(stateCookieName(), payload);
+      if (!silent) console.debug('Saved progress', payload);
+    }
+
+    function restoreProgress() {
+      const state = getCookieJSON(stateCookieName());
+      if (state) {
+        applyLetters(state.letters);
+        elapsedMs = state.elapsedMs || 0;
+        isCompleted = !!state.completed;
+        if (state.isRevealed) {
+          // Will also mark completed
+          revealAnswers();
+        } else {
+          if (state.isChecked) toggleCheck();
+          if (!isCompleted) {
+            setStatus(`Resumed — elapsed ${formatMs(elapsedMs)}.`);
+            startTimer();
+          } else {
+            setStatus(`Solved in ${formatMs(elapsedMs)}.`);
+          }
+        }
+      } else {
+        // fresh start
+        elapsedMs = 0; isCompleted = false; isChecked = false; isRevealed = false;
+        startTimer();
+        saveProgress(true);
+      }
+    }
+
+    function markCompleted(byReveal = false) {
+      if (isCompleted) { saveProgress(true); return; }
+      if (!isPuzzleSolved()) return;
+      isCompleted = true;
+      // finalize time
+      const now = Date.now();
+      if (lastTick) { elapsedMs += (now - lastTick); lastTick = now; }
+      stopTimer();
+
+      const id = getPuzzleId();
+      const title = currentPuzzle?.body?.[0]?.publicationDate || id;
+      const comp = getCookieJSON(COMPLETED_COOKIE) || {};
+      if (!comp[id]) {
+        comp[id] = { timeMs: elapsedMs, completedAt: new Date().toISOString(), byReveal: !!byReveal, title };
+        setCookieJSON(COMPLETED_COOKIE, comp);
+      }
+      setStatus(`Solved in ${formatMs(elapsedMs)}${byReveal ? ' (revealed)' : ''}.`);
+      saveProgress(true);
+    }
+
+    function isPuzzleSolved() {
+      const cells = currentPuzzle.body[0].cells;
+      for (let row = 0; row < 5; row++) {
+        for (let col = 0; col < 5; col++) {
+          const idx = row * 5 + col;
+          const cellData = cells[idx];
+          if (!cellData.answer) continue;
+          const input = getInputAt(row, col);
+          if (!input || input.value.toUpperCase() !== cellData.answer.toUpperCase()) return false;
+        }
+      }
+      return true;
+    }
+
+    window.addEventListener('beforeunload', () => saveProgress(true));
 
     // ---- Data loading ----
     async function fetchPuzzleList() {
@@ -129,7 +286,11 @@
         option.textContent = `Puzzle - ${p.date}`;
         puzzleSelect.appendChild(option);
       });
-      await loadPuzzle(`puzzles/${puzzles[0].file}`);
+
+      const last = getCookie(LAST_PUZZLE_COOKIE);
+      const defaultFile = last && puzzles.some(p => p.file === last) ? last : puzzles[0].file;
+      puzzleSelect.value = defaultFile;
+      await loadPuzzle(`puzzles/${defaultFile}`);
     }
 
     async function loadPuzzle(puzzleFile) {
@@ -137,6 +298,8 @@
         const res = await fetch(puzzleFile);
         if (!res.ok) throw new Error('Failed to fetch puzzle');
         currentPuzzle = await res.json();
+        currentPuzzleFile = puzzleFile.replace(/^puzzles\//,'');
+        setCookie(LAST_PUZZLE_COOKIE, currentPuzzleFile);
         renderPuzzle();
       } catch (e) {
         console.error('Error loading puzzle:', e);
@@ -211,6 +374,9 @@
       // initial buttons state
       document.getElementById('unreveal').disabled = true;
       document.getElementById('unreveal').classList.add('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
+
+      // Restore any saved progress for this puzzle
+      restoreProgress();
     }
 
     // ---- Interactions & UX ----
@@ -234,10 +400,11 @@
 
           if (letter.length === 1) {
             const next = getNextInput(e.target, isAcross);
-            if (next) {
-              next.focus();
-            }
+            if (next) { next.focus(); }
           }
+          // Autosave + check completion on each input
+          saveProgress(true);
+          if (isPuzzleSolved()) markCompleted(false);
         });
 
         // Smart paste (fills across/down)
@@ -257,6 +424,8 @@
             cur = nxt;
           }
           cur.focus();
+          saveProgress(true);
+          if (isPuzzleSolved()) markCompleted(false);
         });
 
         input.addEventListener('keydown', handleKeydown);
@@ -270,16 +439,18 @@
         });
       });
 
-      document.getElementById('check').addEventListener('click', toggleCheck);
-      document.getElementById('reveal').addEventListener('click', revealAnswers);
-      document.getElementById('unreveal').addEventListener('click', unrevealAnswers);
+      document.getElementById('check').addEventListener('click', () => { toggleCheck(); if (isPuzzleSolved()) markCompleted(false); saveProgress(true); });
+      document.getElementById('reveal').addEventListener('click', () => { revealAnswers(); /* markCompleted happens inside */ saveProgress(true); });
+      document.getElementById('unreveal').addEventListener('click', () => { unrevealAnswers(); saveProgress(true); });
       document.getElementById('hint').addEventListener('click', showHint);
-      document.getElementById('reset').addEventListener('click', resetGrid);
+      document.getElementById('reset').addEventListener('click', () => { resetGrid(); saveProgress(true); });
       document.getElementById('close-hint').addEventListener('click', () => {
         document.getElementById('hint-modal').style.display = 'none';
       });
       document.getElementById('puzzle-select').addEventListener('change', (e) => {
-        loadPuzzle(`puzzles/${e.target.value}`);
+        const file = e.target.value;
+        setCookie(LAST_PUZZLE_COOKIE, file);
+        loadPuzzle(`puzzles/${file}`);
       });
     }
 
@@ -407,11 +578,11 @@
             const prev = getPrevInput(e.target, isAcross);
             if (prev) { prev.value = ''; prev.focus(); }
           }
-          handled = true; break;
+          handled = true; saveProgress(true); break;
 
         case 'Delete':
           e.target.value = '';
-          handled = true; break;
+          handled = true; saveProgress(true); break;
 
         case 'Enter':
         case ' ':
@@ -446,7 +617,7 @@
           const col = parseInt(cell.dataset.col);
           const idx = row * 5 + col;
           const correct = currentPuzzle.body[0].cells[idx].answer;
-          if (input.value === correct) {
+          if (input.value.toUpperCase() === String(correct).toUpperCase()) {
             cell.classList.add('correct'); cell.classList.remove('incorrect');
           } else if (input.value) {
             cell.classList.add('incorrect'); cell.classList.remove('correct');
@@ -481,6 +652,9 @@
       document.getElementById('reveal').classList.add('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
       document.getElementById('unreveal').disabled = false;
       document.getElementById('unreveal').classList.remove('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
+
+      // Recording completion (by reveal)
+      if (isPuzzleSolved()) markCompleted(true);
     }
 
     function unrevealAnswers() {
@@ -497,6 +671,10 @@
       document.getElementById('reveal').classList.remove('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
       document.getElementById('unreveal').disabled = true;
       document.getElementById('unreveal').classList.add('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
+      // Reset completion state if user unreveals
+      isCompleted = false;
+      startTimer();
+      setStatus('Grid unrevealed. Continue solving…');
     }
 
     function showHint() {
@@ -532,12 +710,16 @@
       selectedClue = null;
       isChecked = false;
       isRevealed = false;
+      isCompleted = false;
+      elapsedMs = 0;
       document.getElementById('check').textContent = 'Check';
       document.getElementById('reveal').disabled = false;
       document.getElementById('reveal').classList.remove('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
       document.getElementById('unreveal').disabled = true;
       document.getElementById('unreveal').classList.add('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
       setStatus('Grid reset. Click a cell to start.');
+      deleteCookie(stateCookieName());
+      startTimer();
     }
 
     // ---- Init ----
