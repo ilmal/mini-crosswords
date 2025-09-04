@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Local Mini Crossword</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 60px);
+            grid-template-rows: repeat(5, 60px);
+            border: 2px solid #1a1a1a;
+            margin: 20px auto;
+            width: fit-content;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .cell {
+            border: 1px solid #1a1a1a;
+            position: relative;
+            background-color: #ffffff;
+            transition: background-color 0.2s;
+        }
+        .black {
+            background-color: #1a1a1a;
+        }
+        .label {
+            position: absolute;
+            top: 2px;
+            left: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        input {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 500;
+            border: none;
+            text-transform: uppercase;
+            background: transparent;
+            caret-color: transparent;
+            cursor: pointer;
+        }
+        input:focus {
+            outline: none;
+            background-color: #e0f7fa;
+        }
+        .selected {
+            background-color: #b3e5fc !important;
+            box-shadow: inset 0 0 0 2px #0288d1;
+        }
+        .highlight {
+            background-color: #e0f7fa !important;
+        }
+        .correct {
+            background-color: #c8e6c9 !important;
+        }
+        .incorrect {
+            background-color: #ffcdd2 !important;
+        }
+        .revealed {
+            background-color: #fff9c4 !important;
+            font-weight: 700;
+        }
+        .clue {
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .clue-selected {
+            background-color: #b3e5fc;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Mini Crossword</h1>
+    <div class="mb-4">
+        <label for="puzzle-select" class="block text-sm font-medium text-gray-700 mb-2">Select Puzzle:</label>
+        <select id="puzzle-select" class="border rounded-lg p-2 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <!-- Populated dynamically -->
+        </select>
+    </div>
+    <div class="grid" id="grid"></div>
+    <div class="clues flex flex-col md:flex-row justify-between w-full max-w-2xl mt-4">
+        <div class="clue-list w-full md:w-[48%]">
+            <h2 class="text-lg font-semibold text-gray-800 mb-2">Across</h2>
+            <div id="across-clues"></div>
+        </div>
+        <div class="clue-list w-full md:w-[48%] mt-4 md:mt-0">
+            <h2 class="text-lg font-semibold text-gray-800 mb-2">Down</h2>
+            <div id="down-clues"></div>
+        </div>
+    </div>
+    <div class="buttons mt-6 space-x-4">
+        <button id="check" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">Check Answers</button>
+        <button id="reveal" class="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">Reveal</button>
+        <button id="unreveal" class="bg-yellow-600 text-white px-4 py-2 rounded-lg hover:bg-yellow-700 transition">Unreveal</button>
+        <button id="hint" class="bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">Hint</button>
+        <button id="reset" class="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-red-700 transition">Reset</button>
+    </div>
+    <div id="hint-modal" class="modal">
+        <div class="modal-content">
+            <h2 class="text-xl font-bold text-gray-800 mb-4">Hint</h2>
+            <p id="hint-text" class="text-gray-700"></p>
+            <button id="close-hint" class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition w-full">Close</button>
+        </div>
+    </div>
+
+    <script>
+        let currentPuzzle = null;
+        let selectedCell = null;
+        let selectedClue = null;
+        let isAcross = true;
+        let isChecked = false;
+        let isRevealed = false;
+
+        // Fetch list of puzzle JSON files
+        async function fetchPuzzleList() {
+            try {
+                // Adjust the path based on your GitHub Pages URL structure
+                const response = await fetch('puzzles/puzzle-list.json');
+                if (!response.ok) throw new Error('Failed to fetch puzzle list');
+                const puzzleList = await response.json();
+                return puzzleList;
+            } catch (error) {
+                console.error('Error fetching puzzle list:', error);
+                return [];
+            }
+        }
+
+        // Populate puzzle dropdown
+        async function populatePuzzleDropdown() {
+            const puzzleSelect = document.getElementById('puzzle-select');
+            const puzzles = await fetchPuzzleList();
+            puzzleSelect.innerHTML = '';
+            if (puzzles.length === 0) {
+                puzzleSelect.innerHTML = '<option>No puzzles available</option>';
+                return;
+            }
+            puzzles.sort((a, b) => new Date(b.date) - new Date(a.date)); // Sort by date, newest first
+            puzzles.forEach(puzzle => {
+                const option = document.createElement('option');
+                option.value = puzzle.file;
+                option.textContent = `Puzzle - ${puzzle.date}`;
+                puzzleSelect.appendChild(option);
+            });
+            // Load the latest puzzle by default
+            loadPuzzle(`puzzles/${puzzles[0].file}`);
+        }
+
+        // Load puzzle JSON
+        async function loadPuzzle(puzzleFile) {
+            try {
+                const response = await fetch(puzzleFile);
+                if (!response.ok) throw new Error('Failed to fetch puzzle');
+                currentPuzzle = await response.json();
+                renderPuzzle();
+            } catch (error) {
+                console.error('Error loading puzzle:', error);
+                document.getElementById('grid').innerHTML = '<p>Error loading puzzle.</p>';
+            }
+        }
+
+        function renderPuzzle() {
+            const grid = document.getElementById('grid');
+            const acrossClues = document.getElementById('across-clues');
+            const downClues = document.getElementById('down-clues');
+            grid.innerHTML = '';
+            acrossClues.innerHTML = '';
+            downClues.innerHTML = '';
+
+            // Update title
+            document.querySelector('h1').textContent = `Mini Crossword - ${currentPuzzle.body[0].publicationDate}`;
+
+            // Build grid
+            const cells = currentPuzzle.body[0].cells;
+            for (let row = 0; row < 5; row++) {
+                for (let col = 0; col < 5; col++) {
+                    const idx = row * 5 + col;
+                    const cellData = cells[idx];
+                    const div = document.createElement('div');
+                    div.className = 'cell';
+                    div.dataset.row = row;
+                    div.dataset.col = col;
+                    if (!cellData.answer) {
+                        div.classList.add('black');
+                    } else {
+                        if (cellData.label) {
+                            const span = document.createElement('span');
+                            span.className = 'label';
+                            span.textContent = cellData.label;
+                            div.appendChild(span);
+                        }
+                        const input = document.createElement('input');
+                        input.type = 'text';
+                        input.maxLength = 1;
+                        input.id = `cell-${row}-${col}`;
+                        div.appendChild(input);
+                    }
+                    grid.appendChild(div);
+                }
+            }
+
+            // Build clues
+            currentPuzzle.body[0].clueLists.forEach(list => {
+                const container = list.name === 'Across' ? acrossClues : downClues;
+                list.clues.forEach(clueIdx => {
+                    const clue = currentPuzzle.body[0].clues[clueIdx];
+                    const div = document.createElement('div');
+                    div.className = 'clue';
+                    div.dataset.clueIdx = clueIdx;
+                    div.innerHTML = `<strong>${clue.label}</strong>: ${clue.text[0].plain}`;
+                    container.appendChild(div);
+                });
+            });
+
+            // Initialize event listeners
+            initializeGrid();
+        }
+
+        function initializeGrid() {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.addEventListener('input', (e) => {
+                    e.target.value = e.target.value.toUpperCase();
+                    if (e.target.value.length === 1) {
+                        const next = getNextInput(input, isAcross);
+                        if (next) next.focus();
+                    }
+                });
+                input.addEventListener('keydown', handleKeydown);
+                input.addEventListener('click', handleCellClick);
+            });
+
+            document.querySelectorAll('.clue').forEach(clue => {
+                clue.addEventListener('click', () => {
+                    const clueIdx = parseInt(clue.dataset.clueIdx);
+                    selectClue(clueIdx);
+                });
+            });
+
+            document.getElementById('check').addEventListener('click', toggleCheck);
+            document.getElementById('reveal').addEventListener('click', revealAnswers);
+            document.getElementById('unreveal').addEventListener('click', unrevealAnswers);
+            document.getElementById('hint').addEventListener('click', showHint);
+            document.getElementById('reset').addEventListener('click', resetGrid);
+            document.getElementById('close-hint').addEventListener('click', () => {
+                document.getElementById('hint-modal').style.display = 'none';
+            });
+            document.getElementById('puzzle-select').addEventListener('change', (e) => {
+                loadPuzzle(`puzzles/${e.target.value}`);
+            });
+        }
+
+        function handleCellClick(e) {
+            const input = e.target;
+            const row = parseInt(input.parentElement.dataset.row);
+            const col = parseInt(input.parentElement.dataset.col);
+            selectCell(row, col);
+        }
+
+        function selectCell(row, col) {
+            document.querySelectorAll('.selected, .highlight').forEach(el => {
+                el.classList.remove('selected', 'highlight');
+            });
+            document.querySelectorAll('.clue-selected').forEach(el => {
+                el.classList.remove('clue-selected');
+            });
+
+            selectedCell = { row, col };
+            const cell = getCell(row, col);
+            if (!cell || cell.classList.contains('black')) return;
+
+            cell.classList.add('selected');
+            const idx = row * 5 + col;
+            const cellData = currentPuzzle.body[0].cells[idx];
+            if (!cellData.clues) return;
+
+            const clueIdx = isAcross ? cellData.clues[0] : cellData.clues[1];
+            selectClue(clueIdx);
+        }
+
+        function selectClue(clueIdx) {
+            selectedClue = clueIdx;
+            const clue = currentPuzzle.body[0].clues[clueIdx];
+            isAcross = clue.direction === 'Across';
+            document.querySelectorAll('.clue-selected').forEach(el => {
+                el.classList.remove('clue-selected');
+            });
+            document.querySelector(`.clue[data-clue-idx="${clueIdx}"]`).classList.add('clue-selected');
+
+            clue.cells.forEach(cellIdx => {
+                const row = Math.floor(cellIdx / 5);
+                const col = cellIdx % 5;
+                const cell = getCell(row, col);
+                if (cell && !cell.classList.contains('black') && !(row === selectedCell.row && col === selectedCell.col)) {
+                    cell.classList.add('highlight');
+                }
+            });
+        }
+
+        function getCell(row, col) {
+            return document.querySelector(`.cell[data-row="${row}"][data-col="${col}"]`);
+        }
+
+        function getInputAt(row, col) {
+            return document.getElementById(`cell-${row}-${col}`);
+        }
+
+        function getNextInput(current, across) {
+            const row = parseInt(current.parentElement.dataset.row);
+            const col = parseInt(current.parentElement.dataset.col);
+            let newRow = row;
+            let newCol = col;
+            if (across) {
+                newCol++;
+                if (newCol > 4) return null;
+            } else {
+                newRow++;
+                if (newRow > 4) return null;
+            }
+            const next = getInputAt(newRow, newCol);
+            if (next && next.parentElement.classList.contains('black')) {
+                return getNextInput(next, across);
+            }
+            return next;
+        }
+
+        function handleKeydown(e) {
+            const row = parseInt(e.target.parentElement.dataset.row);
+            const col = parseInt(e.target.parentElement.dataset.col);
+            let newRow = row;
+            let newCol = col;
+
+            if (e.key === 'ArrowDown') {
+                isAcross = false;
+                newRow++;
+            } else if (e.key === 'ArrowUp') {
+                isAcross = false;
+                newRow--;
+            } else if (e.key === 'ArrowRight') {
+                isAcross = true;
+                newCol++;
+            } else if (e.key === 'ArrowLeft') {
+                isAcross = true;
+                newCol--;
+            } else if (e.key === 'Backspace' && !e.target.value) {
+                const prev = getPrevInput(e.target, isAcross);
+                if (prev) {
+                    prev.focus();
+                    selectCell(parseInt(prev.parentElement.dataset.row), parseInt(prev.parentElement.dataset.col));
+                }
+                return;
+            } else if (e.key === 'Enter' || e.key === ' ') {
+                isAcross = !isAcross;
+                selectCell(row, col);
+                return;
+            } else if (/^[a-zA-Z]$/.test(e.key)) {
+                e.target.value = e.key.toUpperCase();
+                const next = getNextInput(e.target, isAcross);
+                if (next) {
+                    next.focus();
+                    selectCell(parseInt(next.parentElement.dataset.row), parseInt(next.parentElement.dataset.col));
+                }
+                return;
+            } else if (e.key.length === 1) {
+                e.preventDefault();
+                return;
+            }
+
+            if (newRow >= 0 && newRow <= 4 && newCol >= 0 && newCol <= 4) {
+                const newInput = getInputAt(newRow, newCol);
+                if (newInput) {
+                    newInput.focus();
+                    selectCell(newRow, newCol);
+                }
+            }
+            e.preventDefault();
+        }
+
+        function getPrevInput(current, across) {
+            const row = parseInt(current.parentElement.dataset.row);
+            const col = parseInt(current.parentElement.dataset.col);
+            let newRow = row;
+            let newCol = col;
+            if (across) {
+                newCol--;
+                if (newCol < 0) return null;
+            } else {
+                newRow--;
+                if (newRow < 0) return null;
+            }
+            const prev = getInputAt(newRow, newCol);
+            if (prev && prev.parentElement.classList.contains('black')) {
+                return getPrevInput(prev, across);
+            }
+            return prev;
+        }
+
+        function toggleCheck() {
+            isChecked = !isChecked;
+            const inputs = document.querySelectorAll('input');
+            if (isChecked) {
+                inputs.forEach(input => {
+                    const cell = input.parentElement;
+                    const row = parseInt(cell.dataset.row);
+                    const col = parseInt(cell.dataset.col);
+                    const idx = row * 5 + col;
+                    const correct = currentPuzzle.body[0].cells[idx].answer;
+                    if (input.value === correct) {
+                        cell.classList.add('correct');
+                        cell.classList.remove('incorrect');
+                    } else if (input.value) {
+                        cell.classList.add('incorrect');
+                        cell.classList.remove('correct');
+                    }
+                });
+                document.getElementById('check').textContent = 'Uncheck';
+            } else {
+                inputs.forEach(input => {
+                    input.parentElement.classList.remove('correct', 'incorrect');
+                });
+                document.getElementById('check').textContent = 'Check Answers';
+            }
+        }
+
+        function revealAnswers() {
+            if (isRevealed) return;
+            isRevealed = true;
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                const cell = input.parentElement;
+                const row = parseInt(cell.dataset.row);
+                const col = parseInt(cell.dataset.col);
+                const idx = row * 5 + col;
+                const correct = currentPuzzle.body[0].cells[idx].answer;
+                input.value = correct;
+                cell.classList.add('revealed');
+                cell.classList.remove('correct', 'incorrect');
+            });
+            document.getElementById('reveal').disabled = true;
+            document.getElementById('unreveal').disabled = false;
+            isChecked = false;
+            document.getElementById('check').textContent = 'Check Answers';
+        }
+
+        function unrevealAnswers() {
+            if (!isRevealed) return;
+            isRevealed = false;
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                const cell = input.parentElement;
+                if (!cell.classList.contains('correct') && !cell.classList.contains('incorrect')) {
+                    input.value = '';
+                }
+                cell.classList.remove('revealed');
+            });
+            document.getElementById('reveal').disabled = false;
+            document.getElementById('unreveal').disabled = true;
+        }
+
+        function showHint() {
+            if (!selectedClue && selectedClue !== 0) {
+                alert('Please select a clue first.');
+                return;
+            }
+            const clue = currentPuzzle.body[0].clues[selectedClue];
+            const hintText = document.getElementById('hint-text');
+            const hints = {
+                0: 'This park is known for its stunning turquoise lakes.',
+                1: 'Think about what you press in an elevator.',
+                2: 'A common public transit option in these cities.',
+                3: 'The main character in a movie about a cooking rodent.',
+                4: 'A word from a famous biblical commandment.',
+                5: 'A casual term for your best friend.',
+                6: 'Something your phone might buzz for.',
+                7: 'This artist has a smooth, jazzy voice.',
+                8: 'A number from a famous Middle Eastern tale.',
+                9: 'Might be a stray fry or napkin.'
+            };
+            hintText.textContent = hints[selectedClue] || 'No hint available.';
+            document.getElementById('hint-modal').style.display = 'flex';
+        }
+
+        function resetGrid() {
+            const inputs = document.querySelectorAll('input');
+            inputs.forEach(input => {
+                input.value = '';
+                input.parentElement.classList.remove('correct', 'incorrect', 'revealed', 'selected', 'highlight');
+            });
+            document.querySelectorAll('.clue-selected').forEach(el => {
+                el.classList.remove('clue-selected');
+            });
+            selectedCell = null;
+            selectedClue = null;
+            isChecked = false;
+            isRevealed = false;
+            document.getElementById('check').textContent = 'Check Answers';
+            document.getElementById('reveal').disabled = false;
+            document.getElementById('unreveal').disabled = true;
+        }
+
+        // Initialize
+        populatePuzzleDropdown();
+    </script>
+</body>
+</html>

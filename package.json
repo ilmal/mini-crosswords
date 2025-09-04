@@ -1,0 +1,8 @@
+{
+  "name": "mini-crossword",
+  "version": "1.0.0",
+  "description": "NYT Mini Crossword on GitHub Pages",
+  "dependencies": {
+    "axios": "^1.7.7"
+  }
+}
