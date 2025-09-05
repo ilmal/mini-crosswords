@@ -32,5 +32,6 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add .
           git commit -m "Add puzzle for $(date -u +%Y-%m-%d)" || echo "No changes to commit"
-          git pull --rebase origin main
-          git push origin main
+          git fetch origin
+          git rebase origin/main
+          git push origin main --force
