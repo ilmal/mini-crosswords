@@ -1,12 +1,10 @@
 {
   "body": [
     {
-      "board": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 506 506\" style=\"font-family:helvetica,arial,sans-serif;\"><defs><g id=\"checked\"><path d=\"M103 3 3 103z\" class=\"slash\" /></g><g id=\"modified\"><path d=\"M103 3H69.67L103 36.33z\" class=\"flag\" /></g><g id=\"revealed\"><path d=\"M103 3H69.67L103 36.33z\" class=\"flag\" /><circle cx=\"93.24\" cy=\"12.76\" r=\"4.88\" class=\"tatter\" /></g></defs><g class=\"cells\"><g data-index=\"0\"><path d=\"M3 3h1e2v1e2H3z\" fill=\"#000\" class=\"cell\"/></g><g data-index=\"1\"><path d=\"M103 3h1e2v1e2H103z\" fill=\"#000\" class=\"cell\"/></g><g data-index=\"2\"><path d=\"M203 3h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"205\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >1</text><text x=\"253\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"3\"><path d=\"M303 3h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"305\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >2</text><text x=\"353\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"4\"><path d=\"M403 3h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"405\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >3</text><text x=\"453\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"5\"><path d=\"M3 103h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"136.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >4</text><text x=\"53\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"6\"><path d=\"M103 103h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"105\" y=\"136.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >5</text><text x=\"153\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"7\"><path d=\"M203 103h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"8\"><path d=\"M303 103h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"9\"><path d=\"M403 103h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"10\"><path d=\"M3 203h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"236.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >6</text><text x=\"53\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"11\"><path d=\"M103 203h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"153\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"12\"><path d=\"M203 203h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"13\"><path d=\"M303 203h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"14\"><path d=\"M403 203h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"15\"><path d=\"M3 303h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"336.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >7</text><text x=\"53\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"16\"><path d=\"M103 303h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"153\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"17\"><path d=\"M203 303h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"18\"><path d=\"M303 303h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"19\"><path d=\"M403 303h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"20\"><path d=\"M3 403h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"436.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >8</text><text x=\"53\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"21\"><path d=\"M103 403h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"153\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"22\"><path d=\"M203 403h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"23\"><path d=\"M303 403h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"24\"><path d=\"M403 403h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g></g><g class=\"grid\"><path d=\"M3 103h5e2M3 203h5e2M3 303h5e2M3 403h5e2M103 3v5e2M203 3v5e2M303 3v5e2M403 3v5e2\" stroke=\"dimgray\" fill=\"none\" vector-effect=\"non-scaling-stroke\" class=\"lines\" /><path d=\"M1.5 1.5h503v503H1.5z\" fill=\"none\" stroke=\"#000\" stroke-width=\"3\" class=\"frame\" /></g></svg>",
+      "board": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 506 506\" style=\"font-family:helvetica,arial,sans-serif;\"><defs><g id=\"checked\"><path d=\"M103 3 3 103z\" class=\"slash\" /></g><g id=\"modified\"><path d=\"M103 3H69.67L103 36.33z\" class=\"flag\" /></g><g id=\"revealed\"><path d=\"M103 3H69.67L103 36.33z\" class=\"flag\" /><circle cx=\"93.24\" cy=\"12.76\" r=\"4.88\" class=\"tatter\" /></g></defs><g class=\"cells\"><g data-index=\"0\"><path d=\"M3 3h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >1</text><text x=\"53\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"1\"><path d=\"M103 3h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"105\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >2</text><text x=\"153\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"2\"><path d=\"M203 3h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"205\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >3</text><text x=\"253\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"3\"><path d=\"M303 3h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"305\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >4</text><text x=\"353\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"4\"><path d=\"M403 3h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"405\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >5</text><text x=\"453\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"5\"><path d=\"M3 103h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"136.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >6</text><text x=\"53\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"6\"><path d=\"M103 103h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"153\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"7\"><path d=\"M203 103h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"8\"><path d=\"M303 103h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"9\"><path d=\"M403 103h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"10\"><path d=\"M3 203h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"236.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >7</text><text x=\"53\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"11\"><path d=\"M103 203h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"153\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"12\"><path d=\"M203 203h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"13\"><path d=\"M303 203h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"14\"><path d=\"M403 203h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"15\"><path d=\"M3 303h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"336.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >8</text><text x=\"53\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"16\"><path d=\"M103 303h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"153\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"17\"><path d=\"M203 303h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"18\"><path d=\"M303 303h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"19\"><path d=\"M403 303h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"20\"><path d=\"M3 403h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"436.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >9</text><text x=\"53\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"21\"><path d=\"M103 403h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"153\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"22\"><path d=\"M203 403h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"23\"><path d=\"M303 403h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"24\"><path d=\"M403 403h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g></g><g class=\"grid\"><path d=\"M3 103h5e2M3 203h5e2M3 303h5e2M3 403h5e2M103 3v5e2M203 3v5e2M303 3v5e2M403 3v5e2\" stroke=\"dimgray\" fill=\"none\" vector-effect=\"non-scaling-stroke\" class=\"lines\" /><path d=\"M1.5 1.5h503v503H1.5z\" fill=\"none\" stroke=\"#000\" stroke-width=\"3\" class=\"frame\" /></g></svg>",
       "cells": [
-        {},
-        {},
         {
-          "answer": "B",
+          "answer": "S",
           "clues": [
             0,
             5
@@ -15,7 +13,7 @@
           "type": 1
         },
         {
-          "answer": "F",
+          "answer": "H",
           "clues": [
             0,
             6
@@ -24,7 +22,7 @@
           "type": 1
         },
         {
-          "answer": "G",
+          "answer": "A",
           "clues": [
             0,
             7
@@ -33,33 +31,34 @@
           "type": 1
         },
         {
-          "answer": "J",
+          "answer": "C",
           "clues": [
-            1,
+            0,
             8
           ],
           "label": "4",
           "type": 1
         },
         {
-          "answer": "U",
+          "answer": "K",
           "clues": [
-            1,
+            0,
             9
           ],
           "label": "5",
           "type": 1
         },
         {
-          "answer": "R",
+          "answer": "T",
           "clues": [
             1,
             5
           ],
+          "label": "6",
           "type": 1
         },
         {
-          "answer": "O",
+          "answer": "E",
           "clues": [
             1,
             6
@@ -67,7 +66,7 @@
           "type": 1
         },
         {
-          "answer": "R",
+          "answer": "N",
           "clues": [
             1,
             7
@@ -75,18 +74,17 @@
           "type": 1
         },
         {
-          "answer": "O",
+          "answer": "A",
           "clues": [
-            2,
+            1,
             8
           ],
-          "label": "6",
           "type": 1
         },
         {
-          "answer": "H",
+          "answer": "M",
           "clues": [
-            2,
+            1,
             9
           ],
           "type": 1
@@ -97,6 +95,7 @@
             2,
             5
           ],
+          "label": "7",
           "type": 1
         },
         {
@@ -108,7 +107,7 @@
           "type": 1
         },
         {
-          "answer": "E",
+          "answer": "O",
           "clues": [
             2,
             7
@@ -116,40 +115,40 @@
           "type": 1
         },
         {
-          "answer": "B",
+          "answer": "M",
           "clues": [
-            3,
+            2,
             8
           ],
-          "label": "7",
+          "type": 1
+        },
+        {
+          "answer": "A",
+          "clues": [
+            2,
+            9
+          ],
+          "type": 1
+        },
+        {
+          "answer": "C",
+          "clues": [
+            3,
+            5
+          ],
+          "label": "8",
           "type": 1
         },
         {
           "answer": "O",
           "clues": [
             3,
-            9
-          ],
-          "type": 1
-        },
-        {
-          "answer": "C",
-          "clues": [
-            3,
-            5
-          ],
-          "type": 1
-        },
-        {
-          "answer": "C",
-          "clues": [
-            3,
             6
           ],
           "type": 1
         },
         {
-          "answer": "E",
+          "answer": "D",
           "clues": [
             3,
             7
@@ -157,43 +156,59 @@
           "type": 1
         },
         {
-          "answer": "S",
+          "answer": "E",
           "clues": [
-            4,
+            3,
             8
           ],
-          "label": "8",
           "type": 1
         },
         {
-          "answer": "H",
+          "answer": "R",
           "clues": [
-            4,
+            3,
             9
           ],
           "type": 1
         },
         {
-          "answer": "E",
+          "answer": "K",
           "clues": [
             4,
             5
           ],
-          "type": 1
-        },
-        {
-          "answer": "E",
-          "clues": [
-            4,
-            6
-          ],
+          "label": "9",
           "type": 1
         },
         {
           "answer": "N",
           "clues": [
             4,
+            6
+          ],
+          "type": 1
+        },
+        {
+          "answer": "E",
+          "clues": [
+            4,
             7
+          ],
+          "type": 1
+        },
+        {
+          "answer": "L",
+          "clues": [
+            4,
+            8
+          ],
+          "type": 1
+        },
+        {
+          "answer": "T",
+          "clues": [
+            4,
+            9
           ],
           "type": 1
         }
@@ -223,6 +238,8 @@
       "clues": [
         {
           "cells": [
+            0,
+            1,
             2,
             3,
             4
@@ -231,8 +248,7 @@
           "label": "1",
           "text": [
             {
-              "formatted": "Roald Dahl book that became a 2016 Steven Spielberg film, with \"The\"",
-              "plain": "Roald Dahl book that became a 2016 Steven Spielberg film, with \"The\""
+              "plain": "Shake ___ (fast-food chain)"
             }
           ]
         },
@@ -245,10 +261,10 @@
             9
           ],
           "direction": "Across",
-          "label": "4",
+          "label": "6",
           "text": [
             {
-              "plain": "Courtroom panelist"
+              "plain": "Two hours before noon"
             }
           ]
         },
@@ -261,10 +277,10 @@
             14
           ],
           "direction": "Across",
-          "label": "6",
+          "label": "7",
           "text": [
             {
-              "plain": "Chicago airport"
+              "plain": "Coffee has a strong one"
             }
           ]
         },
@@ -277,10 +293,10 @@
             19
           ],
           "direction": "Across",
-          "label": "7",
+          "label": "8",
           "text": [
             {
-              "plain": "Lawn game with eight large balls"
+              "plain": "Tech worker"
             }
           ]
         },
@@ -293,10 +309,44 @@
             24
           ],
           "direction": "Across",
-          "label": "8",
+          "label": "9",
           "text": [
             {
-              "plain": "Luster"
+              "plain": "Prepared to propose"
+            }
+          ]
+        },
+        {
+          "cells": [
+            0,
+            5,
+            10,
+            15,
+            20
+          ],
+          "direction": "Down",
+          "label": "1",
+          "list": 1,
+          "text": [
+            {
+              "plain": "Neat pile"
+            }
+          ]
+        },
+        {
+          "cells": [
+            1,
+            6,
+            11,
+            16,
+            21
+          ],
+          "direction": "Down",
+          "label": "2",
+          "list": 1,
+          "text": [
+            {
+              "plain": "Marsh bird with an S-shaped neck"
             }
           ]
         },
@@ -309,11 +359,11 @@
             22
           ],
           "direction": "Down",
-          "label": "1",
+          "label": "3",
           "list": 1,
           "text": [
             {
-              "plain": "Prepare for impact"
+              "plain": "Battery end"
             }
           ]
         },
@@ -326,12 +376,11 @@
             23
           ],
           "direction": "Down",
-          "label": "2",
+          "label": "4",
           "list": 1,
           "text": [
             {
-              "formatted": "Jedi&#39;s power, with &#34;the&#34;",
-              "plain": "Jedi's power, with \"the\""
+              "plain": "Desert animal with humps"
             }
           ]
         },
@@ -344,50 +393,12 @@
             24
           ],
           "direction": "Down",
-          "label": "3",
-          "list": 1,
-          "relatives": [
-            8
-          ],
-          "text": [
-            {
-              "plain": "With 4-Down, growing sector of the economy focused on addressing climate change"
-            }
-          ]
-        },
-        {
-          "cells": [
-            5,
-            10,
-            15,
-            20
-          ],
-          "direction": "Down",
-          "label": "4",
-          "list": 1,
-          "relatives": [
-            7
-          ],
-          "text": [
-            {
-              "plain": "See 3-Down"
-            }
-          ]
-        },
-        {
-          "cells": [
-            6,
-            11,
-            16,
-            21
-          ],
-          "direction": "Down",
           "label": "5",
           "list": 1,
           "text": [
             {
-              "formatted": "&#34;This doesn&#39;t look good&#34;",
-              "plain": "\"This doesn't look good\""
+              "formatted": "Box store that&#39;s gone from 2,000+ locations in 2005 to just 17 today",
+              "plain": "Box store that's gone from 2,000+ locations in 2005 to just 17 today"
             }
           ]
         }
@@ -552,7 +563,50 @@
                       },
                       {
                         "name": "fill",
-                        "value": "black"
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "5.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "36.83"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "33.33"
+                      }
+                    ],
+                    "content": "1"
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "53.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "94.67"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "66.67"
                       }
                     ]
                   }
@@ -582,7 +636,50 @@
                       },
                       {
                         "name": "fill",
-                        "value": "black"
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "105.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "36.83"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "33.33"
+                      }
+                    ],
+                    "content": "2"
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "153.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "94.67"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "66.67"
                       }
                     ]
                   }
@@ -636,7 +733,7 @@
                         "value": "33.33"
                       }
                     ],
-                    "content": "1"
+                    "content": "3"
                   },
                   {
                     "name": "text",
@@ -709,7 +806,7 @@
                         "value": "33.33"
                       }
                     ],
-                    "content": "2"
+                    "content": "4"
                   },
                   {
                     "name": "text",
@@ -782,7 +879,7 @@
                         "value": "33.33"
                       }
                     ],
-                    "content": "3"
+                    "content": "5"
                   },
                   {
                     "name": "text",
@@ -855,7 +952,7 @@
                         "value": "33.33"
                       }
                     ],
-                    "content": "4"
+                    "content": "6"
                   },
                   {
                     "name": "text",
@@ -907,28 +1004,6 @@
                         "value": "none"
                       }
                     ]
-                  },
-                  {
-                    "name": "text",
-                    "attributes": [
-                      {
-                        "name": "x",
-                        "value": "105.00"
-                      },
-                      {
-                        "name": "y",
-                        "value": "136.83"
-                      },
-                      {
-                        "name": "text-anchor",
-                        "value": "start"
-                      },
-                      {
-                        "name": "font-size",
-                        "value": "33.33"
-                      }
-                    ],
-                    "content": "5"
                   },
                   {
                     "name": "text",
@@ -1154,7 +1229,7 @@
                         "value": "33.33"
                       }
                     ],
-                    "content": "6"
+                    "content": "7"
                   },
                   {
                     "name": "text",
@@ -1431,7 +1506,7 @@
                         "value": "33.33"
                       }
                     ],
-                    "content": "7"
+                    "content": "8"
                   },
                   {
                     "name": "text",
@@ -1708,7 +1783,7 @@
                         "value": "33.33"
                       }
                     ],
-                    "content": "8"
+                    "content": "9"
                   },
                   {
                     "name": "text",
@@ -2018,8 +2093,8 @@
     "Joel Fagliano"
   ],
   "copyright": "2021",
-  "id": 19528,
-  "lastUpdated": "2021-09-07 13:17:42 +0000 UTC",
-  "publicationDate": "2021-09-05",
+  "id": 19529,
+  "lastUpdated": "2021-09-03 18:08:36 +0000 UTC",
+  "publicationDate": "2021-09-06",
   "subcategory": 2
 }
