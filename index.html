@@ -52,45 +52,293 @@
       background-color: #ffffff; padding: 20px; border-radius: 12px; max-width: 420px; width: 92%;
       box-shadow: 0 10px 25px rgba(0,0,0,.15);
     }
+    #puzzle-select {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 500;
+    }
+    #puzzle-select option {
+      padding: 8px 12px;
+      font-weight: 500;
+    }
+    .puzzle-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-height: calc(100vh - 140px);
+      overflow-y: auto;
+      padding: 20px;
+      background: transparent;
+      border-radius: 0;
+      border: none;
+    }
+    .sidebar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 500px; /* Increased width for better usability */
+      height: 100vh;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border-right: 2px solid #e2e8f0;
+      box-shadow: 4px 0 20px rgba(0,0,0,0.1);
+      transform: translateX(0);
+      transition: transform 0.3s ease;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+    }
+    .sidebar.collapsed {
+      transform: translateX(-460px); /* Adjusted for new width */
+    }
+    .sidebar-header {
+      padding: 24px 20px 20px;
+      border-bottom: 2px solid #e2e8f0;
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    }
+    .sidebar-header h2 {
+      font-size: 24px; /* Larger header for better readability */
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 8px;
+    }
+    .sidebar-header p {
+      font-size: 16px; /* Increased font size */
+      color: #64748b;
+    }
+    .search-container {
+      position: relative;
+      margin-top: 20px; /* More spacing */
+    }
+    .search-input {
+      width: 100%;
+      padding: 12px 40px 12px 16px; /* Increased padding */
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 16px; /* Larger text */
+      background: white;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    .search-icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px; /* Slightly larger icon */
+      color: #64748b;
+      pointer-events: none;
+    }
+    .search-icon svg { width: 18px; height: 18px; display: block; }
+
+    /* collapse icon SVG styling */
+    #collapse-icon { color: #64748b; }
+    #collapse-icon svg { width: 22px; height: 22px; display: block; transform-origin: center; }
+    #collapse-icon svg path { transition: transform 0.25s ease, fill 0.25s ease; }
+    .sidebar.collapsed #collapse-icon svg { transform: rotate(180deg); color: #475569; }
+    .sidebar-content {
+      flex: 1;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .collapse-btn {
+      position: absolute;
+      top: 24px;
+      right: -60px; /* Adjusted for new width */
+      width: 60px; /* Wider button */
+      height: 60px; /* Taller button */
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      border: 2px solid #e2e8f0;
+      border-left: none;
+      border-radius: 0 12px 12px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 4px 0 16px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      font-size: 20px; /* Larger icon */
+      color: #64748b;
+    }
+    .collapse-btn:hover {
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      color: #475569;
+      box-shadow: 6px 0 20px rgba(0,0,0,0.15);
+    }
+    .main-content {
+      margin-left: 500px; /* Adjusted for new sidebar width */
+      transition: margin-left 0.3s ease;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .main-content.expanded {
+      margin-left: 40px;
+    }
+    .puzzle-card {
+      min-height: 4rem;
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 20px; /* Increased padding */
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      text-align: center; /* Center the text */
+    }
+    .puzzle-card:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 4px 16px rgba(59, 130, 246, 0.15);
+      transform: translateY(-2px);
+    }
+    .puzzle-card.selected {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+      background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+    }
+    .puzzle-card.completed {
+      background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+      border-color: #22c55e;
+      box-shadow: 0 2px 12px rgba(34, 197, 94, 0.15);
+    }
+    .puzzle-card.in-progress {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border-color: #f59e0b;
+      box-shadow: 0 2px 12px rgba(245, 158, 11, 0.15);
+    }
+    .puzzle-card .date {
+      font-weight: 700;
+      font-size: 18px; /* Larger text */
+      color: #1f2937;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px; /* More spacing */
+    }
+    .puzzle-card .status {
+      font-size: 14px; /* Larger text */
+      color: #6b7280;
+      display: flex;
+      align-items: center;
+      gap: 8px; /* More spacing */
+      font-weight: 500;
+    }
+    .puzzle-card.completed .status {
+      color: #059669;
+    }
+    .puzzle-card.in-progress .status {
+      color: #d97706;
+    }
+    .status-icon {
+      font-size: 18px; /* Larger icon */
+    }
+    .menu-toggle {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      .sidebar {
+        width: 100%;
+        transform: translateX(-100%);
+      }
+      .sidebar.collapsed {
+        transform: translateX(-100%);
+      }
+      .sidebar:not(.collapsed) {
+        transform: translateX(0);
+      }
+      .main-content {
+        margin-left: 0;
+      }
+      .main-content.expanded {
+        margin-left: 0;
+      }
+      .collapse-btn {
+        display: none;
+      }
+      .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1001;
+        background: white;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      }
+    }
   </style>
 </head>
-<body class="bg-gray-100 min-h-screen flex flex-col items-center p-4">
-  <h1 class="text-3xl font-bold text-gray-900 mb-2">Mini Crossword</h1>
-  <p id="status" class="text-sm text-gray-600 mb-6">—</p>
-
-  <div class="mb-4 w-full max-w-2xl">
-    <label for="puzzle-select" class="block text-sm font-medium text-gray-700 mb-2">Select Puzzle</label>
-    <select id="puzzle-select" class="w-full border rounded-lg p-2 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-slate-400">
-      <!-- Populated dynamically -->
-    </select>
-  </div>
-
-  <div class="grid" id="grid" aria-label="Crossword grid" role="grid"></div>
-
-  <div class="clues flex flex-col md:flex-row justify-between w-full max-w-2xl mt-4 gap-4">
-    <div class="clue-list w-full md:w-[48%]">
-      <h2 class="text-lg font-semibold text-gray-800 mb-2">Across</h2>
-      <div id="across-clues" class="space-y-1"></div>
+<body class="bg-gray-100">
+  <!-- Sidebar -->
+  <div id="sidebar" class="sidebar">
+    <div class="sidebar-header">
+      <h2 class="text-2xl font-bold text-gray-800 mb-4">Select Puzzle</h2>
+      <p class="text-base text-gray-600 mb-4">Choose a crossword to solve</p>
+      <div class="search-container">
+        <input type="text" id="puzzle-search" placeholder="Search puzzles..." class="search-input">
+        <span class="search-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M10 2a8 8 0 105.293 14.293l4.707 4.707 1.414-1.414-4.707-4.707A8 8 0 0010 2zm0 2a6 6 0 110 12 6 6 0 010-12z" />
+          </svg>
+        </span>
+      </div>
     </div>
-    <div class="clue-list w-full md:w-[48%]">
-      <h2 class="text-lg font-semibold text-gray-800 mb-2">Down</h2>
-      <div id="down-clues" class="space-y-1"></div>
+    <div class="sidebar-content">
+      <div id="puzzle-menu" class="puzzle-grid">
+        <!-- Populated dynamically -->
+      </div>
     </div>
+    <button id="collapse-btn" class="collapse-btn" title="Toggle sidebar" aria-label="Toggle sidebar">
+      <span id="collapse-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        </svg>
+      </span>
+    </button>
   </div>
 
-  <div class="mt-6 flex flex-wrap gap-2">
-    <button id="check" class="px-3 py-2 rounded-md border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400">Check</button>
-    <button id="reveal" class="px-3 py-2 rounded-md border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400">Reveal</button>
-    <button id="unreveal" class="px-3 py-2 rounded-md border border-slate-200 bg-slate-50 text-slate-400 cursor-not-allowed" disabled>Unreveal</button>
-    <button id="hint" class="px-3 py-2 rounded-md border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400">Hint</button>
-    <button id="reset" class="px-3 py-2 rounded-md border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400">Reset</button>
-  </div>
+  <!-- Mobile menu toggle -->
+  <button id="menu-toggle" class="menu-toggle px-3 py-2 text-sm bg-blue-500 text-white rounded-md">☰ Menu</button>
 
-  <div id="hint-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="hint-title">
-    <div class="modal-content">
-      <h2 id="hint-title" class="text-xl font-bold text-gray-800 mb-4">Hint</h2>
-      <p id="hint-text" class="text-gray-700"></p>
-      <button id="close-hint" class="mt-4 w-full px-3 py-2 rounded-md border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400">Close</button>
+  <!-- Main content -->
+  <div id="main-content" class="main-content">
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">Mini Crossword</h1>
+    <p id="status" class="text-sm text-gray-600 mb-6">—</p>
+
+    <div class="grid" id="grid" aria-label="Crossword grid" role="grid"></div>
+
+    <div class="clues flex flex-col md:flex-row justify-between w-full max-w-2xl mt-4 gap-4">
+      <div class="clue-list w-full md:w-[48%]">
+        <h2 class="text-lg font-semibold text-gray-800 mb-2">Across</h2>
+        <div id="across-clues" class="space-y-1"></div>
+      </div>
+      <div class="clue-list w-full md:w-[48%]">
+        <h2 class="text-lg font-semibold text-gray-800 mb-2">Down</h2>
+        <div id="down-clues" class="space-y-1"></div>
+      </div>
+    </div>
+
+    <div class="mt-6 flex flex-wrap gap-2">
+      <button id="check" class="px-3 py-2 rounded-md border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400">Check</button>
+      <button id="reveal" class="px-3 py-2 rounded-md border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400">Reveal</button>
+      <button id="unreveal" class="px-3 py-2 rounded-md border border-slate-200 bg-slate-50 text-slate-400 cursor-not-allowed" disabled>Unreveal</button>
+      <button id="hint" class="px-3 py-2 rounded-md border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400">Hint</button>
+      <button id="reset" class="px-3 py-2 rounded-md border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400">Reset</button>
+    </div>
+
+    <div id="hint-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="hint-title">
+      <div class="modal-content">
+        <h2 id="hint-title" class="text-xl font-bold text-gray-800 mb-4">Hint</h2>
+        <p id="hint-text" class="text-gray-700"></p>
+        <button id="close-hint" class="mt-4 w-full px-3 py-2 rounded-md border border-slate-300 bg-white text-slate-800 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-slate-400">Close</button>
+      </div>
     </div>
   </div>
 
@@ -103,11 +351,8 @@
     let isChecked = false;
     let isRevealed = false;
 
-    // Timing + persistence
+    // Simple status tracking
     let isCompleted = false;
-    let elapsedMs = 0;        // accumulated time
-    let lastTick = null;      // last time we updated elapsed
-    let timerInterval = null; // periodic saver
 
     // ---- Cookie helpers ----
     function setCookie(name, value, days = 365) {
@@ -124,7 +369,7 @@
 
     // Namespacing
     const COOKIE_PREFIX = 'MC_';
-    const COMPLETED_COOKIE = COOKIE_PREFIX + 'COMPLETED'; // map { [puzzleId]: { timeMs, completedAt, byReveal, title } }
+    const STATUS_COOKIE = COOKIE_PREFIX + 'STATUS'; // map { [puzzleId]: 'completed' | 'in-progress' }
     const LAST_PUZZLE_COOKIE = COOKIE_PREFIX + 'LAST';     // string (filename)
     function stateCookieName() { return COOKIE_PREFIX + 'STATE_' + getPuzzleId(); }
 
@@ -135,34 +380,26 @@
       return pub || 'puzzle_' + (currentPuzzle?.body?.[0]?.clues?.length || Math.random().toString(36).slice(2));
     }
 
-    function startTimer() {
-      lastTick = Date.now();
-      if (timerInterval) clearInterval(timerInterval);
-      timerInterval = setInterval(() => {
-        if (!isCompleted && !isRevealed) {
-          // accumulate elapsed and save silently every 5s
-          const now = Date.now();
-          elapsedMs += (now - lastTick);
-          lastTick = now;
-          saveProgress(true);
-        }
-      }, 5000);
-    }
-    function stopTimer() { if (timerInterval) { clearInterval(timerInterval); timerInterval = null; } }
-
-    function formatMs(ms) {
-      const m = Math.floor(ms / 60000);
-      const s = Math.floor((ms % 60000) / 1000);
-      return `${m}:${String(s).padStart(2,'0')}`;
+    function updatePuzzleStatus(status) {
+      const puzzleId = getPuzzleId();
+      const statusMap = getCookieJSON(STATUS_COOKIE) || {};
+      if (status === null) {
+        delete statusMap[puzzleId];
+      } else {
+        statusMap[puzzleId] = status;
+      }
+      setCookieJSON(STATUS_COOKIE, statusMap);
+      updatePuzzleDropdown(); // Refresh the dropdown to show status
     }
 
     function collectLetters() {
+      if (!currentPuzzle?.body?.[0]?.cells) return {};
       const map = {};
       const cells = currentPuzzle.body[0].cells;
       for (let row = 0; row < 5; row++) {
         for (let col = 0; col < 5; col++) {
           const idx = row * 5 + col;
-          if (cells[idx].answer) {
+          if (cells[idx]?.answer) {
             const input = getInputAt(row, col);
             map[idx] = (input?.value || '').toUpperCase();
           }
@@ -170,6 +407,7 @@
       }
       return map;
     }
+    
     function applyLetters(map) {
       if (!map) return;
       Object.keys(map).forEach(k => {
@@ -181,75 +419,109 @@
       });
     }
 
-    function saveProgress(silent = false) {
-      // If a timer session is active, accumulate since last tick
-      if (!isCompleted && lastTick !== null && !isRevealed) {
-        const now = Date.now();
-        elapsedMs += (now - lastTick);
-        lastTick = now;
-      }
+    function saveProgress() {
       const payload = {
         letters: collectLetters(),
         isChecked, isRevealed,
-        elapsedMs, completed: isCompleted
+        completed: isCompleted,
+        userProgress: isRevealed ? collectUserProgress() : collectLetters() // Always save user progress
       };
       setCookieJSON(stateCookieName(), payload);
-      if (!silent) console.debug('Saved progress', payload);
+      
+      // Update status
+      if (isCompleted) {
+        updatePuzzleStatus('completed');
+      } else if (hasAnyProgress()) {
+        updatePuzzleStatus('in-progress');
+      }
+    }
+
+    function collectUserProgress() {
+      if (!currentPuzzle?.body?.[0]?.cells) return {};
+      // Collect only the letters that user actually typed (not revealed)
+      const map = {};
+      const cells = currentPuzzle.body[0].cells;
+      for (let row = 0; row < 5; row++) {
+        for (let col = 0; col < 5; col++) {
+          const idx = row * 5 + col;
+          if (cells[idx]?.answer) {
+            const input = getInputAt(row, col);
+            const cell = input.parentElement;
+            // Only save if it's not revealed
+            if (!cell.classList.contains('revealed')) {
+              map[idx] = (input?.value || '').toUpperCase();
+            }
+          }
+        }
+      }
+      return map;
+    }
+
+    function hasAnyProgress() {
+      const letters = collectLetters();
+      return Object.values(letters).some(letter => letter.length > 0);
     }
 
     function restoreProgress() {
       const state = getCookieJSON(stateCookieName());
       if (state) {
         applyLetters(state.letters);
-        elapsedMs = state.elapsedMs || 0;
         isCompleted = !!state.completed;
+        isRevealed = !!state.isRevealed;
+        
         if (state.isRevealed) {
-          // Will also mark completed
-          revealAnswers();
+          // Mark revealed cells properly
+          const userProgress = state.userProgress || {};
+          document.querySelectorAll('input').forEach(input => {
+            const cell = input.parentElement;
+            const row = parseInt(cell.dataset.row);
+            const col = parseInt(cell.dataset.col);
+            const idx = row * 5 + col;
+            
+            // If this cell has a value but user didn't originally have it, mark as revealed
+            if (input.value && (!userProgress[idx] || userProgress[idx] !== input.value)) {
+              cell.classList.add('revealed');
+            }
+          });
+          
+          // Update button states
+          document.getElementById('reveal').disabled = true;
+          document.getElementById('reveal').classList.add('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
+          document.getElementById('unreveal').disabled = false;
+          document.getElementById('unreveal').classList.remove('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
         } else {
           if (state.isChecked) toggleCheck();
-          if (!isCompleted) {
-            setStatus(`Resumed — elapsed ${formatMs(elapsedMs)}.`);
-            startTimer();
-          } else {
-            setStatus(`Solved in ${formatMs(elapsedMs)}.`);
-          }
+        }
+        
+        if (isCompleted) {
+          setStatus('Completed ✓');
+        } else if (hasAnyProgress()) {
+          setStatus('In progress...');
+        } else {
+          setStatus('Click a cell to start. Type letters; arrows move; Space toggles direction; Backspace/Delete edits.');
         }
       } else {
-        // fresh start
-        elapsedMs = 0; isCompleted = false; isChecked = false; isRevealed = false;
-        startTimer();
-        saveProgress(true);
+        isCompleted = false; isChecked = false; isRevealed = false;
+        setStatus('Click a cell to start. Type letters; arrows move; Space toggles direction; Backspace/Delete edits.');
       }
     }
 
     function markCompleted(byReveal = false) {
-      if (isCompleted) { saveProgress(true); return; }
+      if (isCompleted) return;
       if (!isPuzzleSolved()) return;
       isCompleted = true;
-      // finalize time
-      const now = Date.now();
-      if (lastTick) { elapsedMs += (now - lastTick); lastTick = now; }
-      stopTimer();
-
-      const id = getPuzzleId();
-      const title = currentPuzzle?.body?.[0]?.publicationDate || id;
-      const comp = getCookieJSON(COMPLETED_COOKIE) || {};
-      if (!comp[id]) {
-        comp[id] = { timeMs: elapsedMs, completedAt: new Date().toISOString(), byReveal: !!byReveal, title };
-        setCookieJSON(COMPLETED_COOKIE, comp);
-      }
-      setStatus(`Solved in ${formatMs(elapsedMs)}${byReveal ? ' (revealed)' : ''}.`);
-      saveProgress(true);
+      setStatus(`Completed ✓${byReveal ? ' (revealed)' : ''}`);
+      saveProgress();
     }
 
     function isPuzzleSolved() {
+      if (!currentPuzzle?.body?.[0]?.cells) return false;
       const cells = currentPuzzle.body[0].cells;
       for (let row = 0; row < 5; row++) {
         for (let col = 0; col < 5; col++) {
           const idx = row * 5 + col;
           const cellData = cells[idx];
-          if (!cellData.answer) continue;
+          if (!cellData?.answer) continue;
           const input = getInputAt(row, col);
           if (!input || input.value.toUpperCase() !== cellData.answer.toUpperCase()) return false;
         }
@@ -257,7 +529,7 @@
       return true;
     }
 
-    window.addEventListener('beforeunload', () => saveProgress(true));
+    window.addEventListener('beforeunload', () => saveProgress());
 
     // ---- Data loading ----
     async function fetchPuzzleList() {
@@ -272,25 +544,90 @@
     }
 
     async function populatePuzzleDropdown() {
-      const puzzleSelect = document.getElementById('puzzle-select');
+      const puzzleMenu = document.getElementById('puzzle-menu');
       const puzzles = await fetchPuzzleList();
-      puzzleSelect.innerHTML = '';
+      puzzleMenu.innerHTML = '';
+      
       if (puzzles.length === 0) {
-        puzzleSelect.innerHTML = '<option>No puzzles available</option>';
+        puzzleMenu.innerHTML = '<div class="puzzle-card"><div class="date">No puzzles available</div></div>';
         return;
       }
+      
+      const statusMap = getCookieJSON(STATUS_COOKIE) || {};
       puzzles.sort((a,b) => new Date(b.date) - new Date(a.date));
+      
       puzzles.forEach(p => {
-        const option = document.createElement('option');
-        option.value = p.file;
-        option.textContent = `Puzzle - ${p.date}`;
-        puzzleSelect.appendChild(option);
+        const card = document.createElement('div');
+        card.className = 'puzzle-card';
+        card.dataset.file = p.file;
+        
+        const status = statusMap[p.file];
+        
+        if (status === 'completed') {
+          card.classList.add('completed');
+        } else if (status === 'in-progress') {
+          card.classList.add('in-progress');
+        }
+        
+        card.innerHTML = `
+          <div class="date">${p.date}</div>
+        `;
+        
+        card.addEventListener('click', () => {
+          // Remove selected from all cards
+          document.querySelectorAll('.puzzle-card').forEach(c => c.classList.remove('selected'));
+          // Add selected to clicked card
+          card.classList.add('selected');
+          // Load the puzzle
+          setCookie(LAST_PUZZLE_COOKIE, p.file);
+          loadPuzzle(`puzzles/${p.file}`);
+        });
+        
+        puzzleMenu.appendChild(card);
       });
 
       const last = getCookie(LAST_PUZZLE_COOKIE);
       const defaultFile = last && puzzles.some(p => p.file === last) ? last : puzzles[0].file;
-      puzzleSelect.value = defaultFile;
+      
+      // Select the default card
+      const defaultCard = document.querySelector(`[data-file="${defaultFile}"]`);
+      if (defaultCard) defaultCard.classList.add('selected');
+      
       await loadPuzzle(`puzzles/${defaultFile}`);
+    }
+
+    function updatePuzzleDropdown() {
+      const statusMap = getCookieJSON(STATUS_COOKIE) || {};
+      
+      document.querySelectorAll('.puzzle-card').forEach(card => {
+        const file = card.dataset.file;
+        const status = statusMap[file];
+        
+        // Reset classes
+        card.classList.remove('completed', 'in-progress');
+        
+        let statusText = 'Not started';
+        let statusIcon = '';
+        
+        if (status === 'completed') {
+          card.classList.add('completed');
+          statusText = 'Completed';
+          statusIcon = '✅';
+        } else if (status === 'in-progress') {
+          card.classList.add('in-progress');
+          statusText = 'In progress';
+          statusIcon = '⏳';
+        }
+        
+        // Update the status display
+        const statusEl = card.querySelector('.status');
+        if (statusEl) {
+          statusEl.innerHTML = `
+            <span class="status-icon">${statusIcon}</span>
+            <span>${statusText}</span>
+          `;
+        }
+      });
     }
 
     async function loadPuzzle(puzzleFile) {
@@ -403,7 +740,7 @@
             if (next) { next.focus(); }
           }
           // Autosave + check completion on each input
-          saveProgress(true);
+          saveProgress();
           if (isPuzzleSolved()) markCompleted(false);
         });
 
@@ -424,7 +761,7 @@
             cur = nxt;
           }
           cur.focus();
-          saveProgress(true);
+          saveProgress();
           if (isPuzzleSolved()) markCompleted(false);
         });
 
@@ -439,18 +776,28 @@
         });
       });
 
-      document.getElementById('check').addEventListener('click', () => { toggleCheck(); if (isPuzzleSolved()) markCompleted(false); saveProgress(true); });
-      document.getElementById('reveal').addEventListener('click', () => { revealAnswers(); /* markCompleted happens inside */ saveProgress(true); });
-      document.getElementById('unreveal').addEventListener('click', () => { unrevealAnswers(); saveProgress(true); });
+      document.getElementById('check').addEventListener('click', () => { toggleCheck(); if (isPuzzleSolved()) markCompleted(false); saveProgress(); });
+      document.getElementById('reveal').addEventListener('click', () => { revealAnswers(); saveProgress(); });
+      document.getElementById('unreveal').addEventListener('click', () => { unrevealAnswers(); saveProgress(); });
       document.getElementById('hint').addEventListener('click', showHint);
-      document.getElementById('reset').addEventListener('click', () => { resetGrid(); saveProgress(true); });
+      document.getElementById('reset').addEventListener('click', () => { resetGrid(); });
       document.getElementById('close-hint').addEventListener('click', () => {
         document.getElementById('hint-modal').style.display = 'none';
       });
-      document.getElementById('puzzle-select').addEventListener('change', (e) => {
-        const file = e.target.value;
-        setCookie(LAST_PUZZLE_COOKIE, file);
-        loadPuzzle(`puzzles/${file}`);
+      
+      // Sidebar controls
+      document.getElementById('collapse-btn').addEventListener('click', () => {
+        const sidebar = document.getElementById('sidebar');
+        const mainContent = document.getElementById('main-content');
+        
+        sidebar.classList.toggle('collapsed');
+        mainContent.classList.toggle('expanded');
+      });
+      
+      // Mobile menu toggle
+      document.getElementById('menu-toggle').addEventListener('click', () => {
+        const sidebar = document.getElementById('sidebar');
+        sidebar.classList.toggle('collapsed');
       });
     }
 
@@ -578,11 +925,11 @@
             const prev = getPrevInput(e.target, isAcross);
             if (prev) { prev.value = ''; prev.focus(); }
           }
-          handled = true; saveProgress(true); break;
+          handled = true; saveProgress(); break;
 
         case 'Delete':
           e.target.value = '';
-          handled = true; saveProgress(true); break;
+          handled = true; saveProgress(); break;
 
         case 'Enter':
         case ' ':
@@ -616,8 +963,8 @@
           const row = parseInt(cell.dataset.row);
           const col = parseInt(cell.dataset.col);
           const idx = row * 5 + col;
-          const correct = currentPuzzle.body[0].cells[idx].answer;
-          if (input.value.toUpperCase() === String(correct).toUpperCase()) {
+          const correct = currentPuzzle.body[0].cells[idx]?.answer;
+          if (correct && input.value.toUpperCase() === String(correct).toUpperCase()) {
             cell.classList.add('correct'); cell.classList.remove('incorrect');
           } else if (input.value) {
             cell.classList.add('incorrect'); cell.classList.remove('correct');
@@ -634,17 +981,29 @@
 
     function revealAnswers() {
       if (isRevealed) return;
+      
+      // Save current user progress before revealing (BEFORE setting isRevealed)
+      const userProgress = collectUserProgress();
+      
       isRevealed = true;
       document.querySelectorAll('input').forEach(input => {
         const cell = input.parentElement;
         const row = parseInt(cell.dataset.row);
         const col = parseInt(cell.dataset.col);
         const idx = row * 5 + col;
-        const correct = currentPuzzle.body[0].cells[idx].answer;
-        input.value = correct;
-        cell.classList.add('revealed');
+        const correct = currentPuzzle.body[0].cells[idx]?.answer;
+        
+        // Only reveal empty cells or incorrect cells
+        if (correct && (!input.value || input.value.toUpperCase() !== correct.toUpperCase())) {
+          input.value = correct;
+          cell.classList.add('revealed');
+        }
         cell.classList.remove('correct','incorrect');
       });
+      
+      // Now save with the user progress included
+      saveProgress();
+      
       isChecked = false;
       document.getElementById('check').textContent = 'Check';
 
@@ -654,27 +1013,40 @@
       document.getElementById('unreveal').classList.remove('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
 
       // Recording completion (by reveal)
-      if (isPuzzleSolved()) markCompleted(true);
+      markCompleted(true);
     }
 
     function unrevealAnswers() {
       if (!isRevealed) return;
       isRevealed = false;
+      
+      // Get the saved user progress
+      const state = getCookieJSON(stateCookieName());
+      const userProgress = state?.userProgress || {};
+      
       document.querySelectorAll('input').forEach(input => {
         const cell = input.parentElement;
-        if (!cell.classList.contains('correct') && !cell.classList.contains('incorrect')) {
-          input.value = '';
+        const row = parseInt(cell.dataset.row);
+        const col = parseInt(cell.dataset.col);
+        const idx = row * 5 + col;
+        
+        if (cell.classList.contains('revealed')) {
+          // Restore user's original input if they had one
+          input.value = userProgress[idx] || '';
+          cell.classList.remove('revealed');
         }
-        cell.classList.remove('revealed');
+        cell.classList.remove('correct','incorrect');
       });
+      
       document.getElementById('reveal').disabled = false;
       document.getElementById('reveal').classList.remove('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
       document.getElementById('unreveal').disabled = true;
       document.getElementById('unreveal').classList.add('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
+      
       // Reset completion state if user unreveals
       isCompleted = false;
-      startTimer();
       setStatus('Grid unrevealed. Continue solving…');
+      saveProgress();
     }
 
     function showHint() {
@@ -711,7 +1083,6 @@
       isChecked = false;
       isRevealed = false;
       isCompleted = false;
-      elapsedMs = 0;
       document.getElementById('check').textContent = 'Check';
       document.getElementById('reveal').disabled = false;
       document.getElementById('reveal').classList.remove('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
@@ -719,7 +1090,7 @@
       document.getElementById('unreveal').classList.add('text-slate-400','bg-slate-50','border-slate-200','cursor-not-allowed');
       setStatus('Grid reset. Click a cell to start.');
       deleteCookie(stateCookieName());
-      startTimer();
+      updatePuzzleStatus(null); // Remove status for this puzzle
     }
 
     // ---- Init ----
@@ -727,5 +1098,3 @@
   </script>
 </body>
 </html>
-
-
