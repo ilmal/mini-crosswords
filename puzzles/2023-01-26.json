@@ -1,0 +1,1482 @@
+{
+  "body": [
+    {
+      "board": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 506 506\" style=\"font-family:helvetica,arial,sans-serif;\"><defs><g id=\"checked\"><path d=\"M128 3 3 128z\" class=\"slash\" /></g><g id=\"modified\"><path d=\"M128 3H86.33L128 44.67z\" class=\"flag\" /></g><g id=\"revealed\"><path d=\"M128 3H86.33L128 44.67z\" class=\"flag\" /><circle cx=\"115.8\" cy=\"15\" r=\"6\" class=\"tatter\" /></g></defs><g class=\"cells\"><g data-index=\"0\"><path d=\"M3 3h125v125H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"45.17\" text-anchor=\"start\" font-size=\"41.67\" class=\"label\" >1</text><text x=\"65.5\" y=\"117.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"1\"><path d=\"M128 3h125v125H128z\" fill=\"none\" class=\"cell\"/><text x=\"130\" y=\"45.17\" text-anchor=\"start\" font-size=\"41.67\" class=\"label\" >2</text><text x=\"190.5\" y=\"117.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"2\"><path d=\"M253 3h125v125H253z\" fill=\"none\" class=\"cell\"/><text x=\"255\" y=\"45.17\" text-anchor=\"start\" font-size=\"41.67\" class=\"label\" >3</text><text x=\"315.5\" y=\"117.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"3\"><path d=\"M378 3h125v125H378z\" fill=\"none\" class=\"cell\"/><text x=\"380\" y=\"45.17\" text-anchor=\"start\" font-size=\"41.67\" class=\"label\" >4</text><text x=\"440.5\" y=\"117.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"4\"><path d=\"M3 128h125v125H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"170.17\" text-anchor=\"start\" font-size=\"41.67\" class=\"label\" >5</text><text x=\"65.5\" y=\"242.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"5\"><path d=\"M128 128h125v125H128z\" fill=\"none\" class=\"cell\"/><text x=\"190.5\" y=\"242.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"6\"><path d=\"M253 128h125v125H253z\" fill=\"none\" class=\"cell\"/><text x=\"315.5\" y=\"242.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"7\"><path d=\"M378 128h125v125H378z\" fill=\"none\" class=\"cell\"/><text x=\"440.5\" y=\"242.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"8\"><path d=\"M3 253h125v125H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"295.17\" text-anchor=\"start\" font-size=\"41.67\" class=\"label\" >6</text><text x=\"65.5\" y=\"367.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"9\"><path d=\"M128 253h125v125H128z\" fill=\"none\" class=\"cell\"/><text x=\"190.5\" y=\"367.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"10\"><path d=\"M253 253h125v125H253z\" fill=\"none\" class=\"cell\"/><text x=\"315.5\" y=\"367.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"11\"><path d=\"M378 253h125v125H378z\" fill=\"none\" class=\"cell\"/><text x=\"440.5\" y=\"367.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"12\"><path d=\"M3 378h125v125H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"420.17\" text-anchor=\"start\" font-size=\"41.67\" class=\"label\" >7</text><text x=\"65.5\" y=\"492.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"13\"><path d=\"M128 378h125v125H128z\" fill=\"none\" class=\"cell\"/><text x=\"190.5\" y=\"492.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"14\"><path d=\"M253 378h125v125H253z\" fill=\"none\" class=\"cell\"/><text x=\"315.5\" y=\"492.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g><g data-index=\"15\"><path d=\"M378 378h125v125H378z\" fill=\"none\" class=\"cell\"/><text x=\"440.5\" y=\"492.58\" text-anchor=\"middle\" font-size=\"83.33\" class=\"guess\"/></g></g><g class=\"grid\"><path d=\"M3 128h5e2M3 253h5e2M3 378h5e2M128 3v5e2M253 3v5e2M378 3v5e2\" stroke=\"dimgray\" fill=\"none\" vector-effect=\"non-scaling-stroke\" class=\"lines\" /><path d=\"M1.5 1.5h503v503H1.5z\" fill=\"none\" stroke=\"#000\" stroke-width=\"3\" class=\"frame\" /></g></svg>",
+      "cells": [
+        {
+          "answer": "O",
+          "clues": [
+            0,
+            4
+          ],
+          "label": "1",
+          "type": 1
+        },
+        {
+          "answer": "S",
+          "clues": [
+            0,
+            5
+          ],
+          "label": "2",
+          "type": 1
+        },
+        {
+          "answer": "L",
+          "clues": [
+            0,
+            6
+          ],
+          "label": "3",
+          "type": 1
+        },
+        {
+          "answer": "O",
+          "clues": [
+            0,
+            7
+          ],
+          "label": "4",
+          "type": 1
+        },
+        {
+          "answer": "R",
+          "clues": [
+            1,
+            4
+          ],
+          "label": "5",
+          "type": 1
+        },
+        {
+          "answer": "O",
+          "clues": [
+            1,
+            5
+          ],
+          "type": 1
+        },
+        {
+          "answer": "O",
+          "clues": [
+            1,
+            6
+          ],
+          "type": 1
+        },
+        {
+          "answer": "T",
+          "clues": [
+            1,
+            7
+          ],
+          "type": 1
+        },
+        {
+          "answer": "S",
+          "clues": [
+            2,
+            4
+          ],
+          "label": "6",
+          "type": 1
+        },
+        {
+          "answer": "O",
+          "clues": [
+            2,
+            5
+          ],
+          "type": 1
+        },
+        {
+          "answer": "O",
+          "clues": [
+            2,
+            6
+          ],
+          "type": 1
+        },
+        {
+          "answer": "T",
+          "clues": [
+            2,
+            7
+          ],
+          "type": 1
+        },
+        {
+          "answer": "O",
+          "clues": [
+            3,
+            4
+          ],
+          "label": "7",
+          "type": 1
+        },
+        {
+          "answer": "N",
+          "clues": [
+            3,
+            5
+          ],
+          "type": 1
+        },
+        {
+          "answer": "T",
+          "clues": [
+            3,
+            6
+          ],
+          "type": 1
+        },
+        {
+          "answer": "O",
+          "clues": [
+            3,
+            7
+          ],
+          "type": 1
+        }
+      ],
+      "clueLists": [
+        {
+          "clues": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "name": "Across"
+        },
+        {
+          "clues": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "name": "Down"
+        }
+      ],
+      "clues": [
+        {
+          "cells": [
+            0,
+            1,
+            2,
+            3
+          ],
+          "direction": "Across",
+          "label": "1",
+          "text": [
+            {
+              "plain": "Capital of Norway"
+            }
+          ]
+        },
+        {
+          "cells": [
+            4,
+            5,
+            6,
+            7
+          ],
+          "direction": "Across",
+          "label": "5",
+          "text": [
+            {
+              "plain": "Cheer (on)"
+            }
+          ]
+        },
+        {
+          "cells": [
+            8,
+            9,
+            10,
+            11
+          ],
+          "direction": "Across",
+          "label": "6",
+          "text": [
+            {
+              "plain": "Chimney grime"
+            }
+          ]
+        },
+        {
+          "cells": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "direction": "Across",
+          "label": "7",
+          "text": [
+            {
+              "formatted": "&#34;Hold ___ your hat!&#34;",
+              "plain": "\"Hold ___ your hat!\""
+            }
+          ]
+        },
+        {
+          "cells": [
+            0,
+            4,
+            8,
+            12
+          ],
+          "direction": "Down",
+          "label": "1",
+          "list": 1,
+          "text": [
+            {
+              "plain": "Approximately"
+            }
+          ]
+        },
+        {
+          "cells": [
+            1,
+            5,
+            9,
+            13
+          ],
+          "direction": "Down",
+          "label": "2",
+          "list": 1,
+          "text": [
+            {
+              "plain": "In a moment"
+            }
+          ]
+        },
+        {
+          "cells": [
+            2,
+            6,
+            10,
+            14
+          ],
+          "direction": "Down",
+          "label": "3",
+          "list": 1,
+          "text": [
+            {
+              "formatted": "Pirate&#39;s plunder",
+              "plain": "Pirate's plunder"
+            }
+          ]
+        },
+        {
+          "cells": [
+            3,
+            7,
+            11,
+            15
+          ],
+          "direction": "Down",
+          "label": "4",
+          "list": 1,
+          "text": [
+            {
+              "formatted": "\"A Man Called ___\" (Tom Hanks movie)",
+              "plain": "\"A Man Called ___\" (Tom Hanks movie)"
+            }
+          ]
+        }
+      ],
+      "dimensions": {
+        "height": 4,
+        "width": 4
+      },
+      "SVG": {
+        "name": "svg",
+        "attributes": [
+          {
+            "name": "xmlns",
+            "value": "http://www.w3.org/2000/svg"
+          },
+          {
+            "name": "viewBox",
+            "value": "0 0 506.00 506.00"
+          }
+        ],
+        "children": [
+          {
+            "name": "defs",
+            "children": [
+              {
+                "name": "g",
+                "attributes": [
+                  {
+                    "name": "id",
+                    "value": "checked"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "line",
+                    "attributes": [
+                      {
+                        "name": "x1",
+                        "value": "128.00"
+                      },
+                      {
+                        "name": "y1",
+                        "value": "3.00"
+                      },
+                      {
+                        "name": "x2",
+                        "value": "3.00"
+                      },
+                      {
+                        "name": "y2",
+                        "value": "128.00"
+                      },
+                      {
+                        "name": "class",
+                        "value": "slash"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "attributes": [
+                  {
+                    "name": "id",
+                    "value": "modified"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "polygon",
+                    "attributes": [
+                      {
+                        "name": "points",
+                        "value": "128.00,3.00 86.33,3.00 128.00,44.67"
+                      },
+                      {
+                        "name": "class",
+                        "value": "flag"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "attributes": [
+                  {
+                    "name": "id",
+                    "value": "revealed"
+                  }
+                ],
+                "children": [
+                  {
+                    "name": "polygon",
+                    "attributes": [
+                      {
+                        "name": "points",
+                        "value": "128.00,3.00 86.33,3.00 128.00,44.67"
+                      },
+                      {
+                        "name": "class",
+                        "value": "flag"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "circle",
+                    "attributes": [
+                      {
+                        "name": "cx",
+                        "value": "115.80"
+                      },
+                      {
+                        "name": "cy",
+                        "value": "15.20"
+                      },
+                      {
+                        "name": "r",
+                        "value": "6.10"
+                      },
+                      {
+                        "name": "class",
+                        "value": "tatter"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "attributes": [
+              {
+                "name": "data-group",
+                "value": "cells"
+              }
+            ],
+            "children": [
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "3.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "3.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "5.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "45.17"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "41.67"
+                      }
+                    ],
+                    "content": "1"
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "65.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "117.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "128.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "3.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "130.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "45.17"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "41.67"
+                      }
+                    ],
+                    "content": "2"
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "190.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "117.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "253.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "3.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "255.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "45.17"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "41.67"
+                      }
+                    ],
+                    "content": "3"
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "315.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "117.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "378.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "3.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "380.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "45.17"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "41.67"
+                      }
+                    ],
+                    "content": "4"
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "440.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "117.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "3.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "128.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "5.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "170.17"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "41.67"
+                      }
+                    ],
+                    "content": "5"
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "65.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "242.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "128.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "128.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "190.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "242.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "253.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "128.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "315.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "242.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "378.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "128.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "440.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "242.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "3.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "253.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "5.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "295.17"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "41.67"
+                      }
+                    ],
+                    "content": "6"
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "65.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "367.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "128.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "253.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "190.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "367.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "253.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "253.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "315.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "367.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "378.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "253.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "440.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "367.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "3.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "378.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "5.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "420.17"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "41.67"
+                      }
+                    ],
+                    "content": "7"
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "65.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "492.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "128.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "378.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "190.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "492.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "253.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "378.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "315.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "492.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "378.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "378.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "125.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "440.50"
+                      },
+                      {
+                        "name": "y",
+                        "value": "492.58"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "83.33"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "g",
+            "attributes": [
+              {
+                "name": "data-group",
+                "value": "grid"
+              }
+            ],
+            "children": [
+              {
+                "name": "path",
+                "attributes": [
+                  {
+                    "name": "d",
+                    "value": "M3.00,128.00 l500.00,0.00 M3.00,253.00 l500.00,0.00 M3.00,378.00 l500.00,0.00 M128.00,3.00 l0.00,500.00 M253.00,3.00 l0.00,500.00 M378.00,3.00 l0.00,500.00"
+                  },
+                  {
+                    "name": "stroke",
+                    "value": "dimgray"
+                  },
+                  {
+                    "name": "fill",
+                    "value": "none"
+                  },
+                  {
+                    "name": "vector-effect",
+                    "value": "non-scaling-stroke"
+                  }
+                ]
+              },
+              {
+                "name": "rect",
+                "attributes": [
+                  {
+                    "name": "x",
+                    "value": "1.50"
+                  },
+                  {
+                    "name": "y",
+                    "value": "1.50"
+                  },
+                  {
+                    "name": "width",
+                    "value": "503.00"
+                  },
+                  {
+                    "name": "height",
+                    "value": "503.00"
+                  },
+                  {
+                    "name": "fill",
+                    "value": "none"
+                  },
+                  {
+                    "name": "stroke",
+                    "value": "black"
+                  },
+                  {
+                    "name": "stroke-width",
+                    "value": "3.00"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "styles": [
+          {
+            "name": "font-family",
+            "value": "helvetica,arial,sans-serif"
+          }
+        ]
+      }
+    }
+  ],
+  "constructors": [
+    "Joel Fagliano"
+  ],
+  "copyright": "2023",
+  "id": 20892,
+  "lastUpdated": "2023-01-20 15:01:42 +0000 UTC",
+  "publicationDate": "2023-01-26",
+  "subcategory": 2
+}

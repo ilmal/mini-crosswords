@@ -1,60 +1,50 @@
 {
+  "assets": [
+    {
+      "uri": "https://www.nytimes.com/games-assets/overlays/Sep0525.start.png"
+    }
+  ],
   "body": [
     {
-      "board": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 506 506\" style=\"font-family:helvetica,arial,sans-serif;\"><defs><g id=\"checked\"><path d=\"M103 3 3 103z\" class=\"slash\" /></g><g id=\"modified\"><path d=\"M103 3H69.67L103 36.33z\" class=\"flag\" /></g><g id=\"revealed\"><path d=\"M103 3H69.67L103 36.33z\" class=\"flag\" /><circle cx=\"93.24\" cy=\"12.76\" r=\"4.88\" class=\"tatter\" /></g></defs><g class=\"cells\"><g data-index=\"0\"><path d=\"M3 3h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >1</text><text x=\"53\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"1\"><path d=\"M103 3h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"105\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >2</text><text x=\"153\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"2\"><path d=\"M203 3h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"205\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >3</text><text x=\"253\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"3\"><path d=\"M303 3h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"305\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >4</text><text x=\"353\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"4\"><path d=\"M403 3h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"405\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >5</text><text x=\"453\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"5\"><path d=\"M3 103h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"136.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >6</text><text x=\"53\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"6\"><path d=\"M103 103h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"153\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"7\"><path d=\"M203 103h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"8\"><path d=\"M303 103h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"9\"><path d=\"M403 103h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"10\"><path d=\"M3 203h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"236.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >7</text><text x=\"53\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"11\"><path d=\"M103 203h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"153\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"12\"><path d=\"M203 203h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"13\"><path d=\"M303 203h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"14\"><path d=\"M403 203h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"15\"><path d=\"M3 303h1e2v1e2H3z\" fill=\"#000\" class=\"cell\"/></g><g data-index=\"16\"><path d=\"M103 303h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"105\" y=\"336.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >8</text><text x=\"153\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"17\"><path d=\"M203 303h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"18\"><path d=\"M303 303h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"19\"><path d=\"M403 303h1e2v1e2H403z\" fill=\"#000\" class=\"cell\"/></g><g data-index=\"20\"><path d=\"M3 403h1e2v1e2H3z\" fill=\"#000\" class=\"cell\"/></g><g data-index=\"21\"><path d=\"M103 403h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"105\" y=\"436.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >9</text><text x=\"153\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"22\"><path d=\"M203 403h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"23\"><path d=\"M303 403h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"24\"><path d=\"M403 403h1e2v1e2H403z\" fill=\"#000\" class=\"cell\"/></g></g><g class=\"grid\"><path d=\"M3 103h5e2M3 203h5e2M3 303h5e2M3 403h5e2M103 3v5e2M203 3v5e2M303 3v5e2M403 3v5e2\" stroke=\"dimgray\" fill=\"none\" vector-effect=\"non-scaling-stroke\" class=\"lines\" /><path d=\"M1.5 1.5h503v503H1.5z\" fill=\"none\" stroke=\"#000\" stroke-width=\"3\" class=\"frame\" /></g></svg>",
+      "board": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" viewBox=\"0 0 506 606\" style=\"font-family:helvetica,arial,sans-serif;\"><defs><g id=\"checked\"><path d=\"M103 3 3 103z\" class=\"slash\" /></g><g id=\"modified\"><path d=\"M103 3H69.67L103 36.33z\" class=\"flag\" /></g><g id=\"revealed\"><path d=\"M103 3H69.67L103 36.33z\" class=\"flag\" /><circle cx=\"93.24\" cy=\"12.76\" r=\"4.88\" class=\"tatter\" /></g></defs><g class=\"cells\"><g data-index=\"0\"><path d=\"M3 3h1e2v1e2H3z\" fill=\"#000\" class=\"cell\"/></g><g data-index=\"1\"><path d=\"M103 3h1e2v1e2H103z\" fill=\"#000\" class=\"cell\"/></g><g data-index=\"2\"><path d=\"M203 3h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"205\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >1</text><text x=\"253\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"3\"><path d=\"M303 3h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"305\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >2</text><text x=\"353\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"4\"><path d=\"M403 3h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"405\" y=\"36.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >3</text><text x=\"453\" y=\"94.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"5\"><path d=\"M3 103h1e2v1e2H3z\" fill=\"#000\" class=\"cell\"/></g><g data-index=\"6\"><path d=\"M103 103h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"105\" y=\"136.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >4</text><text x=\"153\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"7\"><path d=\"M203 103h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"8\"><path d=\"M303 103h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"9\"><path d=\"M403 103h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"194.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"10\"><path d=\"M3 203h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"236.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >5</text><text x=\"53\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"11\"><path d=\"M103 203h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"153\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"12\"><path d=\"M203 203h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"13\"><path d=\"M303 203h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"14\"><path d=\"M403 203h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"294.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"15\"><path d=\"M3 303h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"336.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >6</text><text x=\"53\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"16\"><path d=\"M103 303h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"153\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"17\"><path d=\"M203 303h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"18\"><path d=\"M303 303h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"19\"><path d=\"M403 303h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"394.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"20\"><path d=\"M3 403h1e2v1e2H3z\" fill=\"none\" class=\"cell\"/><text x=\"5\" y=\"436.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >7</text><text x=\"53\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"21\"><path d=\"M103 403h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"153\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"22\"><path d=\"M203 403h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"23\"><path d=\"M303 403h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><circle cx=\"353\" cy=\"453\" r=\"49.75\" stroke=\"dimgray\" fill=\"none\" vector-effect=\"non-scaling-stroke\" class=\"circle\" /><text x=\"353\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"24\"><path d=\"M403 403h1e2v1e2H403z\" fill=\"none\" class=\"cell\"/><text x=\"453\" y=\"494.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"25\"><path d=\"M3 503h1e2v1e2H3z\" fill=\"#000\" class=\"cell\"/></g><g data-index=\"26\"><path d=\"M103 503h1e2v1e2H103z\" fill=\"none\" class=\"cell\"/><text x=\"105\" y=\"536.83\" text-anchor=\"start\" font-size=\"33.33\" class=\"label\" >8</text><text x=\"153\" y=\"594.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"27\"><path d=\"M203 503h1e2v1e2H203z\" fill=\"none\" class=\"cell\"/><text x=\"253\" y=\"594.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"28\"><path d=\"M303 503h1e2v1e2H303z\" fill=\"none\" class=\"cell\"/><text x=\"353\" y=\"594.67\" text-anchor=\"middle\" font-size=\"66.67\" class=\"guess\"/></g><g data-index=\"29\"><path d=\"M403 503h1e2v1e2H403z\" fill=\"#000\" class=\"cell\"/></g></g><g class=\"grid\"><path d=\"M3 103h5e2M3 203h5e2M3 303h5e2M3 403h5e2M3 503h5e2M103 3v6e2M203 3v6e2M303 3v6e2M403 3v6e2\" stroke=\"dimgray\" fill=\"none\" vector-effect=\"non-scaling-stroke\" class=\"lines\" /><path d=\"M1.5 1.5h503v603H1.5z\" fill=\"none\" stroke=\"#000\" stroke-width=\"3\" class=\"frame\" /></g></svg>",
       "cells": [
+        {},
+        {},
         {
-          "answer": "B",
+          "answer": "P",
           "clues": [
             0,
-            5
+            6
           ],
           "label": "1",
           "type": 1
         },
         {
-          "answer": "A",
+          "answer": "J",
           "clues": [
             0,
-            6
+            7
           ],
           "label": "2",
           "type": 1
         },
         {
-          "answer": "N",
-          "clues": [
-            0,
-            7
-          ],
-          "label": "3",
-          "type": 1
-        },
-        {
-          "answer": "F",
+          "answer": "S",
           "clues": [
             0,
             8
           ],
-          "label": "4",
+          "label": "3",
           "type": 1
         },
+        {},
         {
-          "answer": "F",
-          "clues": [
-            0,
-            9
-          ],
-          "label": "5",
-          "type": 1
-        },
-        {
-          "answer": "F",
+          "answer": "G",
           "clues": [
             1,
-            5
+            9
           ],
-          "label": "6",
+          "label": "4",
           "type": 1
         },
         {
@@ -66,7 +56,7 @@
           "type": 1
         },
         {
-          "answer": "O",
+          "answer": "U",
           "clues": [
             1,
             7
@@ -74,7 +64,7 @@
           "type": 1
         },
         {
-          "answer": "O",
+          "answer": "T",
           "clues": [
             1,
             8
@@ -82,32 +72,32 @@
           "type": 1
         },
         {
-          "answer": "R",
-          "clues": [
-            1,
-            9
-          ],
-          "type": 1
-        },
-        {
-          "answer": "F",
+          "answer": "S",
           "clues": [
             2,
-            5
+            10
           ],
-          "label": "7",
+          "label": "5",
           "type": 1
         },
         {
           "answer": "E",
           "clues": [
             2,
+            9
+          ],
+          "type": 1
+        },
+        {
+          "answer": "A",
+          "clues": [
+            2,
             6
           ],
           "type": 1
         },
         {
-          "answer": "R",
+          "answer": "L",
           "clues": [
             2,
             7
@@ -115,7 +105,7 @@
           "type": 1
         },
         {
-          "answer": "R",
+          "answer": "E",
           "clues": [
             2,
             8
@@ -123,19 +113,93 @@
           "type": 1
         },
         {
-          "answer": "Y",
+          "answer": "I",
           "clues": [
-            2,
+            3,
+            10
+          ],
+          "label": "6",
+          "type": 1
+        },
+        {
+          "answer": "T",
+          "clues": [
+            3,
             9
+          ],
+          "type": 1
+        },
+        {
+          "answer": "S",
+          "clues": [
+            3,
+            6
+          ],
+          "type": 1
+        },
+        {
+          "answer": "I",
+          "clues": [
+            3,
+            7
+          ],
+          "type": 1
+        },
+        {
+          "answer": "N",
+          "clues": [
+            3,
+            8
+          ],
+          "type": 1
+        },
+        {
+          "answer": "R",
+          "clues": [
+            4,
+            10
+          ],
+          "label": "7",
+          "type": 1
+        },
+        {
+          "answer": "O",
+          "clues": [
+            4,
+            9
+          ],
+          "type": 1
+        },
+        {
+          "answer": "M",
+          "clues": [
+            4,
+            6
+          ],
+          "type": 1
+        },
+        {
+          "answer": "E",
+          "clues": [
+            4,
+            7
+          ],
+          "type": 2
+        },
+        {
+          "answer": "O",
+          "clues": [
+            4,
+            8
           ],
           "type": 1
         },
         {},
         {
-          "answer": "R",
+          "answer": "N",
           "clues": [
-            3,
-            6
+            5,
+            9
           ],
           "label": "8",
           "type": 1
@@ -143,43 +207,16 @@
         {
           "answer": "A",
           "clues": [
-            3,
-            7
-          ],
-          "type": 1
-        },
-        {
-          "answer": "T",
-          "clues": [
-            3,
-            8
-          ],
-          "type": 1
-        },
-        {},
-        {},
-        {
-          "answer": "T",
-          "clues": [
-            4,
+            5,
             6
           ],
-          "label": "9",
           "type": 1
         },
         {
-          "answer": "H",
+          "answer": "T",
           "clues": [
-            4,
+            5,
             7
-          ],
-          "type": 1
-        },
-        {
-          "answer": "Y",
-          "clues": [
-            4,
-            8
           ],
           "type": 1
         },
@@ -192,17 +229,18 @@
             1,
             2,
             3,
-            4
+            4,
+            5
           ],
           "name": "Across"
         },
         {
           "clues": [
-            5,
             6,
             7,
             8,
-            9
+            9,
+            10
           ],
           "name": "Down"
         }
@@ -210,8 +248,6 @@
       "clues": [
         {
           "cells": [
-            0,
-            1,
             2,
             3,
             4
@@ -220,23 +256,22 @@
           "label": "1",
           "text": [
             {
-              "plain": "National park in the Canadian Rockies"
+              "plain": "Slumber party attire, casually"
             }
           ]
         },
         {
           "cells": [
-            5,
             6,
             7,
             8,
             9
           ],
           "direction": "Across",
-          "label": "6",
+          "label": "4",
           "text": [
             {
-              "plain": "Elevator choice"
+              "plain": "Surplus"
             }
           ]
         },
@@ -249,71 +284,57 @@
             14
           ],
           "direction": "Across",
-          "label": "7",
+          "label": "5",
           "text": [
             {
-              "plain": "Means of transport in Seattle, San Francisco and New York"
+              "plain": "Bobby ___, co-founder of the Black Panthers"
             }
           ]
         },
         {
           "cells": [
+            15,
             16,
             17,
-            18
+            18,
+            19
+          ],
+          "direction": "Across",
+          "label": "6",
+          "text": [
+            {
+              "formatted": "Soccer announcer&#39;s cry after a goal",
+              "plain": "Soccer announcer's cry after a goal"
+            }
+          ]
+        },
+        {
+          "cells": [
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "direction": "Across",
+          "label": "7",
+          "text": [
+            {
+              "plain": "Famous star-crossed lover"
+            }
+          ]
+        },
+        {
+          "cells": [
+            26,
+            27,
+            28
           ],
           "direction": "Across",
           "label": "8",
           "text": [
             {
-              "plain": "Unlikely chef in a 2007 Pixar film"
-            }
-          ]
-        },
-        {
-          "cells": [
-            21,
-            22,
-            23
-          ],
-          "direction": "Across",
-          "label": "9",
-          "text": [
-            {
-              "formatted": "&#34;Honor ___ father ...&#34;",
-              "plain": "\"Honor ___ father ...\""
-            }
-          ]
-        },
-        {
-          "cells": [
-            0,
-            5,
-            10
-          ],
-          "direction": "Down",
-          "label": "1",
-          "list": 1,
-          "text": [
-            {
-              "plain": "Closest pal, informally"
-            }
-          ]
-        },
-        {
-          "cells": [
-            1,
-            6,
-            11,
-            16,
-            21
-          ],
-          "direction": "Down",
-          "label": "2",
-          "list": 1,
-          "text": [
-            {
-              "plain": "Text notification, e.g."
+              "plain": "D.C. baseball player"
             }
           ]
         },
@@ -323,15 +344,15 @@
             7,
             12,
             17,
-            22
+            22,
+            27
           ],
           "direction": "Down",
-          "label": "3",
+          "label": "1",
           "list": 1,
           "text": [
             {
-              "formatted": "Jones who sang &#34;Come Away With Me&#34;",
-              "plain": "Jones who sang \"Come Away With Me\""
+              "plain": "Substance inside early flat-screen TVs"
             }
           ]
         },
@@ -341,14 +362,15 @@
             8,
             13,
             18,
-            23
+            23,
+            28
           ],
           "direction": "Down",
-          "label": "4",
+          "label": "2",
           "list": 1,
           "text": [
             {
-              "plain": "Number of thieves faced by Ali Baba"
+              "plain": "Famous star-crossed lover"
             }
           ]
         },
@@ -356,21 +378,60 @@
           "cells": [
             4,
             9,
-            14
+            14,
+            19,
+            24
+          ],
+          "direction": "Down",
+          "label": "3",
+          "list": 1,
+          "text": [
+            {
+              "plain": "Recorder in a courtroom"
+            }
+          ]
+        },
+        {
+          "cells": [
+            6,
+            11,
+            16,
+            21,
+            26
+          ],
+          "direction": "Down",
+          "label": "4",
+          "list": 1,
+          "text": [
+            {
+              "formatted": "&#34;Hop aboard!&#34;",
+              "plain": "\"Hop aboard!\""
+            }
+          ]
+        },
+        {
+          "cells": [
+            10,
+            15,
+            20
           ],
           "direction": "Down",
           "label": "5",
           "list": 1,
           "text": [
             {
-              "plain": "Loose item at the bottom of a fast-food bag, perhaps"
+              "formatted": "&#34;___, yes, ___!&#34; ",
+              "plain": "\"___, yes, ___!\" "
             }
           ]
         }
       ],
       "dimensions": {
-        "height": 5,
+        "height": 6,
         "width": 5
+      },
+      "overlays": {
+        "beforeStart": 1
       },
       "SVG": {
         "name": "svg",
@@ -381,7 +442,7 @@
           },
           {
             "name": "viewBox",
-            "value": "0 0 506.00 506.00"
+            "value": "0 0 506.00 606.00"
           }
         ],
         "children": [
@@ -528,50 +589,7 @@
                       },
                       {
                         "name": "fill",
-                        "value": "none"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "text",
-                    "attributes": [
-                      {
-                        "name": "x",
-                        "value": "5.00"
-                      },
-                      {
-                        "name": "y",
-                        "value": "36.83"
-                      },
-                      {
-                        "name": "text-anchor",
-                        "value": "start"
-                      },
-                      {
-                        "name": "font-size",
-                        "value": "33.33"
-                      }
-                    ],
-                    "content": "1"
-                  },
-                  {
-                    "name": "text",
-                    "attributes": [
-                      {
-                        "name": "x",
-                        "value": "53.00"
-                      },
-                      {
-                        "name": "y",
-                        "value": "94.67"
-                      },
-                      {
-                        "name": "text-anchor",
-                        "value": "middle"
-                      },
-                      {
-                        "name": "font-size",
-                        "value": "66.67"
+                        "value": "black"
                       }
                     ]
                   }
@@ -601,50 +619,7 @@
                       },
                       {
                         "name": "fill",
-                        "value": "none"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "text",
-                    "attributes": [
-                      {
-                        "name": "x",
-                        "value": "105.00"
-                      },
-                      {
-                        "name": "y",
-                        "value": "36.83"
-                      },
-                      {
-                        "name": "text-anchor",
-                        "value": "start"
-                      },
-                      {
-                        "name": "font-size",
-                        "value": "33.33"
-                      }
-                    ],
-                    "content": "2"
-                  },
-                  {
-                    "name": "text",
-                    "attributes": [
-                      {
-                        "name": "x",
-                        "value": "153.00"
-                      },
-                      {
-                        "name": "y",
-                        "value": "94.67"
-                      },
-                      {
-                        "name": "text-anchor",
-                        "value": "middle"
-                      },
-                      {
-                        "name": "font-size",
-                        "value": "66.67"
+                        "value": "black"
                       }
                     ]
                   }
@@ -698,7 +673,7 @@
                         "value": "33.33"
                       }
                     ],
-                    "content": "3"
+                    "content": "1"
                   },
                   {
                     "name": "text",
@@ -771,7 +746,7 @@
                         "value": "33.33"
                       }
                     ],
-                    "content": "4"
+                    "content": "2"
                   },
                   {
                     "name": "text",
@@ -844,7 +819,7 @@
                         "value": "33.33"
                       }
                     ],
-                    "content": "5"
+                    "content": "3"
                   },
                   {
                     "name": "text",
@@ -893,50 +868,7 @@
                       },
                       {
                         "name": "fill",
-                        "value": "none"
-                      }
-                    ]
-                  },
-                  {
-                    "name": "text",
-                    "attributes": [
-                      {
-                        "name": "x",
-                        "value": "5.00"
-                      },
-                      {
-                        "name": "y",
-                        "value": "136.83"
-                      },
-                      {
-                        "name": "text-anchor",
-                        "value": "start"
-                      },
-                      {
-                        "name": "font-size",
-                        "value": "33.33"
-                      }
-                    ],
-                    "content": "6"
-                  },
-                  {
-                    "name": "text",
-                    "attributes": [
-                      {
-                        "name": "x",
-                        "value": "53.00"
-                      },
-                      {
-                        "name": "y",
-                        "value": "194.67"
-                      },
-                      {
-                        "name": "text-anchor",
-                        "value": "middle"
-                      },
-                      {
-                        "name": "font-size",
-                        "value": "66.67"
+                        "value": "black"
                       }
                     ]
                   }
@@ -969,6 +901,28 @@
                         "value": "none"
                       }
                     ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "105.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "136.83"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "33.33"
+                      }
+                    ],
+                    "content": "4"
                   },
                   {
                     "name": "text",
@@ -1194,7 +1148,7 @@
                         "value": "33.33"
                       }
                     ],
-                    "content": "7"
+                    "content": "5"
                   },
                   {
                     "name": "text",
@@ -1447,7 +1401,50 @@
                       },
                       {
                         "name": "fill",
-                        "value": "black"
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "5.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "336.83"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "33.33"
+                      }
+                    ],
+                    "content": "6"
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "53.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "394.67"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "66.67"
                       }
                     ]
                   }
@@ -1480,28 +1477,6 @@
                         "value": "none"
                       }
                     ]
-                  },
-                  {
-                    "name": "text",
-                    "attributes": [
-                      {
-                        "name": "x",
-                        "value": "105.00"
-                      },
-                      {
-                        "name": "y",
-                        "value": "336.83"
-                      },
-                      {
-                        "name": "text-anchor",
-                        "value": "start"
-                      },
-                      {
-                        "name": "font-size",
-                        "value": "33.33"
-                      }
-                    ],
-                    "content": "8"
                   },
                   {
                     "name": "text",
@@ -1652,7 +1627,28 @@
                       },
                       {
                         "name": "fill",
-                        "value": "black"
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "453.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "394.67"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "66.67"
                       }
                     ]
                   }
@@ -1682,7 +1678,50 @@
                       },
                       {
                         "name": "fill",
-                        "value": "black"
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "5.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "436.83"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "33.33"
+                      }
+                    ],
+                    "content": "7"
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "53.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "494.67"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "66.67"
                       }
                     ]
                   }
@@ -1715,28 +1754,6 @@
                         "value": "none"
                       }
                     ]
-                  },
-                  {
-                    "name": "text",
-                    "attributes": [
-                      {
-                        "name": "x",
-                        "value": "105.00"
-                      },
-                      {
-                        "name": "y",
-                        "value": "436.83"
-                      },
-                      {
-                        "name": "text-anchor",
-                        "value": "start"
-                      },
-                      {
-                        "name": "font-size",
-                        "value": "33.33"
-                      }
-                    ],
-                    "content": "9"
                   },
                   {
                     "name": "text",
@@ -1841,6 +1858,35 @@
                     ]
                   },
                   {
+                    "name": "circle",
+                    "attributes": [
+                      {
+                        "name": "cx",
+                        "value": "353.00"
+                      },
+                      {
+                        "name": "cy",
+                        "value": "453.00"
+                      },
+                      {
+                        "name": "r",
+                        "value": "49.75"
+                      },
+                      {
+                        "name": "stroke",
+                        "value": "dimgray"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      },
+                      {
+                        "name": "vector-effect",
+                        "value": "non-scaling-stroke"
+                      }
+                    ]
+                  },
+                  {
                     "name": "text",
                     "attributes": [
                       {
@@ -1876,6 +1922,262 @@
                       {
                         "name": "y",
                         "value": "403.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "100.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "100.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "453.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "494.67"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "66.67"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "3.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "503.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "100.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "100.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "black"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "103.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "503.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "100.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "100.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "105.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "536.83"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "start"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "33.33"
+                      }
+                    ],
+                    "content": "8"
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "153.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "594.67"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "66.67"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "203.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "503.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "100.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "100.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "253.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "594.67"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "66.67"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "303.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "503.00"
+                      },
+                      {
+                        "name": "width",
+                        "value": "100.00"
+                      },
+                      {
+                        "name": "height",
+                        "value": "100.00"
+                      },
+                      {
+                        "name": "fill",
+                        "value": "none"
+                      }
+                    ]
+                  },
+                  {
+                    "name": "text",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "353.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "594.67"
+                      },
+                      {
+                        "name": "text-anchor",
+                        "value": "middle"
+                      },
+                      {
+                        "name": "font-size",
+                        "value": "66.67"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "g",
+                "children": [
+                  {
+                    "name": "rect",
+                    "attributes": [
+                      {
+                        "name": "x",
+                        "value": "403.00"
+                      },
+                      {
+                        "name": "y",
+                        "value": "503.00"
                       },
                       {
                         "name": "width",
@@ -1909,7 +2211,7 @@
                 "attributes": [
                   {
                     "name": "d",
-                    "value": "M3.00,103.00 l500.00,0.00 M3.00,203.00 l500.00,0.00 M3.00,303.00 l500.00,0.00 M3.00,403.00 l500.00,0.00 M103.00,3.00 l0.00,500.00 M203.00,3.00 l0.00,500.00 M303.00,3.00 l0.00,500.00 M403.00,3.00 l0.00,500.00"
+                    "value": "M3.00,103.00 l500.00,0.00 M3.00,203.00 l500.00,0.00 M3.00,303.00 l500.00,0.00 M3.00,403.00 l500.00,0.00 M3.00,503.00 l500.00,0.00 M103.00,3.00 l0.00,600.00 M203.00,3.00 l0.00,600.00 M303.00,3.00 l0.00,600.00 M403.00,3.00 l0.00,600.00"
                   },
                   {
                     "name": "stroke",
@@ -1942,7 +2244,7 @@
                   },
                   {
                     "name": "height",
-                    "value": "503.00"
+                    "value": "603.00"
                   },
                   {
                     "name": "fill",
@@ -1971,12 +2273,12 @@
     }
   ],
   "constructors": [
-    "Joel Fagliano"
+    "Christina Iverson"
   ],
   "copyright": "2025",
-  "id": 23126,
-  "lastUpdated": "2025-08-28 19:11:04 +0000 UTC",
-  "publicationDate": "2025-09-04",
-  "subcategory": 2,
-  "freePuzzle": true
+  "editor": "Joel Fagliano",
+  "id": 23081,
+  "lastUpdated": "2025-08-28 19:11:33 +0000 UTC",
+  "publicationDate": "2025-09-05",
+  "subcategory": 2
 }
